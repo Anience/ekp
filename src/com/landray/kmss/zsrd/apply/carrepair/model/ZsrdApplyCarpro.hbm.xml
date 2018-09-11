@@ -1,0 +1,43 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class
+		name="com.landray.kmss.zsrd.apply.carrepair.model.ZsrdApplyCarpro"
+		table="zsrd_apply_carpro">
+		<id
+			name="fdId"
+			column="fd_id"
+			length="36">
+			<generator
+				class="assigned" />
+		</id>
+		
+		
+		<property
+			name="fdProitem"
+			column="fd_proitem"
+			update="true"
+			insert="true"
+			length="500"
+			not-null="false" />
+		
+	    <property 
+	        name="fdOrder" 
+	        column="fd_order" 
+	        update="true"
+		    insert="true" 
+		    not-null="false" />
+
+		<many-to-one
+			name="fdProid"
+			column="fd_proid"
+			insert="true"
+			update="true"
+			not-null="false" />
+
+
+	</class>
+</hibernate-mapping>

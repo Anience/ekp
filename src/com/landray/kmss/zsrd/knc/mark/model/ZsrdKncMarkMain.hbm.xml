@@ -1,0 +1,92 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class
+		name="com.landray.kmss.zsrd.knc.mark.model.ZsrdKncMarkMain"
+		table="zsrd_knc_mark_main">
+		<id
+			name="fdId"
+			column="fd_id"
+			length="36">
+			<generator
+				class="assigned" />
+		</id>
+
+       <property
+			name="fdMainCreatTime"
+			column="fd_main_creat_time"
+			update="true"
+			insert="true"
+			length="36"
+			not-null="false" />
+
+		<property
+			name="fdBillName"
+			column="fd_bill_name"
+			update="true"
+			insert="true"
+			length="200"
+			not-null="false" />
+
+		<property
+			name="fdFlowDes"
+			column="fd_flow_des"
+			update="true"
+			insert="true"
+			length="800"
+			not-null="false" />
+
+		<property
+			name="fdFlowName"
+			column="fd_flow_name"
+			update="true"
+			insert="true"
+			length="36"
+			not-null="false" />
+
+		<property
+			name="fdUrl"
+			column="fd_url"
+			update="true"
+			insert="true"
+			length="500"
+			not-null="false" />
+
+		<property
+			name="fdSource"
+			column="fd_source"
+			update="true"
+			insert="true"
+			length="100"
+			not-null="false" />
+
+		<property
+			name="fdRemark"
+			column="fd_remark"
+			update="true"
+			insert="true"
+			length="1000"
+			not-null="false" />
+
+		<property
+			name="fdCreatorId"
+			column="fd_creator_id"
+			update="true"
+			insert="true"
+			length="36"
+			not-null="false" />
+
+		<property
+			name="fdCreatorName"
+			column="fd_creator_name"
+			update="true"
+			insert="true"
+			length="36"
+			not-null="false" />
+
+
+	</class>
+</hibernate-mapping>

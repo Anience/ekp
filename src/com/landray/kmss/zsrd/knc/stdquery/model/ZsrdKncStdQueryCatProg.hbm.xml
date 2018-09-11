@@ -1,0 +1,19 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class
+            name="com.landray.kmss.zsrd.knc.stdquery.model.ZsrdKncStdQueryCatProg"
+            table="zsrd_knc_std_query_cat_prog">
+        <id name="fdId" column="fd_id" length="36">
+            <generator class="assigned"/>
+        </id>
+        <many-to-one name="fdCat" column="fd_catid"
+                     class="com.landray.kmss.zsrd.knc.stdquery.model.ZsrdKncStdQueryCategory"/>
+        <many-to-one name="fdProg" column="fd_progid"
+                     class="com.landray.kmss.zsrd.knc.stdquery.model.ZsrdKncStdQueryProgram"/>
+
+    </class>
+</hibernate-mapping>

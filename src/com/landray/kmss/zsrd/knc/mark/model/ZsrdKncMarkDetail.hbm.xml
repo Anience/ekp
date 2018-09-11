@@ -1,0 +1,66 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class
+		name="com.landray.kmss.zsrd.knc.mark.model.ZsrdKncMarkDetail"
+		table="zsrd_knc_mark_detail">
+		<id
+			name="fdId"
+			column="fd_id"
+			length="36">
+			<generator
+				class="assigned" />
+		</id>
+
+		<property
+			name="fdScore"
+			column="fd_score"
+			update="true"
+			insert="true"
+			length="4"
+			not-null="false" />
+		
+		<property
+			name="fdDetailCreatTime"
+			column="fd_Detail_creat_time"
+			update="true"
+			insert="true"
+			not-null="false" />
+
+		<property
+			name="fdMarkerId"
+			column="fd_marker_id"
+			update="true"
+			insert="true"
+			length="36"
+			not-null="false" />
+
+		<property
+			name="fdMarker"
+			column="fd_marker"
+			update="true"
+			insert="true"
+			length="36"
+			not-null="false" />
+
+		<property
+			name="fdSuggest"
+			column="fd_suggest"
+			update="true"
+			insert="true"
+			length="1000"
+			not-null="false" />
+
+		<many-to-one
+			name="fdParent"
+			column="fd_parent_id"
+			insert="true"
+			update="true"
+			not-null="false" />
+
+
+	</class>
+</hibernate-mapping>

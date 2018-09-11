@@ -1,0 +1,156 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class
+		name="com.landray.kmss.zsrd.knc.stdquery.model.ZsrdKncStdQueryDetail"
+		table="zsrd_knc_std_query_detail">
+		<id
+			name="fdId"
+			column="fd_id"
+			length="36">
+			<generator
+				class="assigned" />
+		</id>
+
+		<property
+			name="docName"
+			column="doc_name"
+			update="true"
+			insert="true"
+			length="200"
+			not-null="false" />
+
+		<property
+			name="docCode"
+			column="doc_code"
+			update="true"
+			insert="true"
+			length="100"
+			not-null="false" />
+
+		<property
+			name="docStatus"
+			column="doc_status"
+			update="true"
+			insert="true"
+			length="2"
+			not-null="false" />
+
+		<property
+			name="docCreateTime"
+			column="doc_create_time"
+			update="true"
+			insert="true"
+			not-null="false" />
+
+		<property
+			name="fdLastModifiedTime"
+			column="fd_last_modified_time"
+			update="true"
+			insert="true"
+			not-null="false" />
+
+		<property
+			name="fdVersion"
+			column="fd_version"
+			update="true"
+			insert="true"
+			length="36"
+			not-null="false" />
+
+		<property
+			name="fdSize"
+			column="fd_size"
+			update="true"
+			insert="true"
+			length="36"
+			not-null="false" />
+
+		<property
+			name="fdDescription"
+			column="fd_description"
+			update="true"
+			insert="true"
+			length="1000"
+			not-null="false" />
+		<property
+			name="fdFlowName"
+			column="fd_flow_name"
+			update="true"
+			insert="true"
+			length="100"
+			not-null="false" />
+
+		<property
+			name="fdBillName"
+			column="fd_bill_name"
+			update="true"
+			insert="true"
+			length="100"
+			not-null="false" />
+
+		<property
+			name="fdCreatorFlowDes"
+			column="fd_creator_flow_des"
+			update="true"
+			insert="true"
+			length="100"
+			not-null="false" />
+
+		<property
+			name="fdUrl"
+			column="fd_url"
+			update="true"
+			insert="true"
+			length="500"
+			not-null="false" />
+
+		<property
+			name="fdSource"
+			column="fd_source"
+			update="true"
+			insert="true"
+			length="36"
+			not-null="false" />
+
+		<property
+			name="fdRemark"
+			column="fd_remark"
+			update="true"
+			insert="true"
+			length="500"
+			not-null="false" />
+
+		<property
+				name="fdProgName"
+				column="fd_prog_name"
+				update="true"
+				insert="true"
+				length="50"
+				not-null="false" />
+	<!--	<many-to-one
+			name="docCategory"
+			column="doc_category_id"
+			insert="true"
+			update="true"
+			not-null="false" />-->
+
+		<many-to-one
+			name="docCreator"
+			column="doc_creator_id"
+			insert="true"
+			update="true"
+			not-null="false" />
+
+		<many-to-one
+				name="fdProg"
+				column="fd_progid"
+				insert="true"
+				update="true"
+				not-null="false" />
+
+	</class>
+</hibernate-mapping>
