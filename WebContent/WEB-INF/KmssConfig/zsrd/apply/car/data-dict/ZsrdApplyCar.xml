@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<models
+	xmlns="http://www.example.org/design-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/design-config ../../../data-dict.xsd ">
+	<model
+		modelName="com.landray.kmss.zsrd.apply.car.model.ZsrdApplyCar"
+		messageKey="zsrd-apply-car:table.zsrdApplyCar"
+		displayProperty="fdDepart"
+		serviceBean="zsrdApplyCarService"
+		table="zsrd_apply_car"
+		url="/zsrd/apply/car/zsrd_apply_car/zsrdApplyCar.do?method=view&amp;fdId=${fdId}">
+
+		<idProperty>
+			<generator
+				type="assigned" />
+		</idProperty>
+
+		<simpleProperty
+			name="docStatus"
+			messageKey="zsrd-apply-car:zsrdApplyCar.docStatus"
+			type="String"
+			column="doc_status"
+			notNull="false"
+			length="2"
+			validate="false" />
+
+		<simpleProperty
+			name="docCreateTime"
+			messageKey="zsrd-apply-car:zsrdApplyCar.docCreateTime"
+			type="DateTime"
+			column="doc_create_time"
+			notNull="false"
+			validate="false" />
+			
+		<simpleProperty
+			name="fdTimeBack"
+			messageKey="zsrd-apply-car:zsrdApplyCar.fdTimeBack"
+			type="DateTime"
+			column="fd_time_back"
+			notNull="false"
+			validate="false" />
+			
+	    <simpleProperty
+			name="fdTimeStart"
+			messageKey="zsrd-apply-car:zsrdApplyCar.fdTimeStart"
+			type="DateTime"
+			column="fd_time_start"
+			notNull="false"
+			validate="false" />
+
+		<simpleProperty
+			name="fdCarReason"
+			messageKey="zsrd-apply-car:zsrdApplyCar.fdCarReason"
+			type="String"
+			column="fd_car_reason"
+			notNull="false"
+			length="500"
+			validate="false" />
+			
+		<simpleProperty
+			name="fdUseCar"
+			messageKey="zsrd-apply-car:zsrdApplyCar.fdUseCar"
+			type="String"
+			column="fd_use_car"
+			notNull="false"
+			length="36"
+			validate="false" />
+			
+		<simpleProperty
+			name="fdDriver"
+			messageKey="zsrd-apply-car:zsrdApplyCar.fdDriver"
+			type="String"
+			column="fd_driver"
+			notNull="false"
+			length="36"
+			validate="false" />
+
+		<simpleProperty
+			name="fdPhoneNum"
+			messageKey="zsrd-apply-car:zsrdApplyCar.fdPhoneNum"
+			type="String"
+			column="fd_phone_num"
+			notNull="false"
+			length="36"
+			validate="false" />
+
+		<simpleProperty
+			name="fdRouteStart"
+			messageKey="zsrd-apply-car:zsrdApplyCar.fdRouteStart"
+			type="String"
+			column="fd_route_start"
+			notNull="false"
+			length="100"
+			validate="false" />
+
+		<simpleProperty
+			name="fdRouteBack"
+			messageKey="zsrd-apply-car:zsrdApplyCar.fdRouteBack"
+			type="String"
+			column="fd_route_back"
+			notNull="false"
+			length="100"
+			validate="false" />
+
+		<simpleProperty
+			name="fdUseTime"
+			messageKey="zsrd-apply-car:zsrdApplyCar.fdUseTime"
+			type="String"
+			column="fd_use_time"
+			notNull="false"
+			length="50"
+			validate="false" />
+
+		<simpleProperty
+			name="fdCarNum"
+			messageKey="zsrd-apply-car:zsrdApplyCar.fdCarNum"
+			type="String"
+			column="fd_car_num"
+			notNull="false"
+			length="36"
+			validate="false" />
+
+		<simpleProperty
+			name="fdRemark"
+			messageKey="zsrd-apply-car:zsrdApplyCar.fdRemark"
+			type="String"
+			column="fd_remark"
+			notNull="false"
+			length="500"
+			validate="false" />
+
+		<modelProperty
+			name="fdDepart"
+			messageKey="zsrd-apply-car:zsrdApplyCar.fdDepart"
+			type="com.landray.kmss.sys.organization.model.SysOrgElement"
+			column="fd_depart"
+			notNull="false"
+			validate="false" />
+
+		<modelProperty
+			name="docCreator"
+			messageKey="zsrd-apply-car:zsrdApplyCar.docCreator"
+			type="com.landray.kmss.common.model.SysOrgElement"
+			column="doc_creator_id"
+			notNull="false"
+			validate="false" />
+
+ 
+
+ 
+	</model>
+</models>

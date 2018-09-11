@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+<struts-config>
+	<!-- 表单 Bean -->
+	<form-beans>
+		<form-bean
+			name="zsrdApplyCarrepairForm"
+			type="com.landray.kmss.zsrd.apply.carrepair.forms.ZsrdApplyCarrepairForm" />
+		<form-bean
+			name="zsrdApplyCarproForm"
+			type="com.landray.kmss.zsrd.apply.carrepair.forms.ZsrdApplyCarproForm" />
+	</form-beans>
+
+	<!-- 操作映射 -->
+	<action-mappings>
+	<action
+				path="/zsrd/apply/carrepair/zsrd_apply_carrepair/zsrdApplyCarrepairDetail"
+				type="com.landray.kmss.zsrd.apply.carrepair.actions.ZsrdApplyCarrepairDetailAction"
+				parameter="method"
+				name="zsrdApplyCarrepairForm"
+				input="edit">
+			<forward
+					name="listChildren"
+					path="/zsrd/apply/carrepair/zsrd_apply_carrepair/zsrdApplyCarrepair_data.jsp">
+			</forward>
+			<forward
+					name="data"
+					path="/zsrd/apply/carrepair/zsrd_apply_carrepair/zsrdApplyCarrepair_data.jsp">
+			</forward>
+			<forward
+					name="listChildren.4m"
+					path="/zsrd/apply/carrepair/zsrd_apply_carrepair/zsrdApplyCarrepair_list.jsp">
+			</forward>
+		</action>
+		
+		<action
+			path="/zsrd/apply/carrepair/zsrd_apply_carrepair/zsrdApplyCarrepair"
+			type="com.landray.kmss.zsrd.apply.carrepair.actions.ZsrdApplyCarrepairAction"
+			name="zsrdApplyCarrepairForm"
+			parameter="method"
+			input="edit"
+			unknown="false"
+			validate="true"
+			scope="request">
+			<forward
+				name="view"
+				path="/zsrd/apply/carrepair/zsrd_apply_carrepair/zsrdApplyCarrepair_view.jsp" />
+			<forward
+				name="edit"
+				path="/zsrd/apply/carrepair/zsrd_apply_carrepair/zsrdApplyCarrepair_edit.jsp" />
+			<forward
+				name="list"
+				path="/zsrd/apply/carrepair/zsrd_apply_carrepair/zsrdApplyCarrepair_list.jsp" />
+			<forward
+				name="data"
+				path="/zsrd/apply/carrepair/zsrd_apply_carrepair/zsrdApplyCarrepair_data.jsp" />
+		</action>
+
+		<action
+			path="/zsrd/apply/carrepair/zsrd_apply_carpro/zsrdApplyCarpro"
+			type="com.landray.kmss.zsrd.apply.carrepair.actions.ZsrdApplyCarproAction"
+			name="zsrdApplyCarproForm"
+			parameter="method"
+			input="edit"
+			unknown="false"
+			validate="true"
+			scope="request">
+			<forward
+				name="view"
+				path="/zsrd/apply/carrepair/zsrd_apply_carpro/zsrdApplyCarpro_view.jsp" />
+			<forward
+				name="edit"
+				path="/zsrd/apply/carrepair/zsrd_apply_carpro/zsrdApplyCarpro_edit.jsp" />
+			<forward
+				name="list"
+				path="/zsrd/apply/carrepair/zsrd_apply_carpro/zsrdApplyCarpro_list.jsp" />
+		</action>
+
+
+	</action-mappings>
+	<!-- 消息资源 -->
+	<message-resources
+		parameter="com.landray.kmss.zsrd.apply.carrepair.ApplicationResources"
+		key="zsrd-apply-carrepair" />
+</struts-config>

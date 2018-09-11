@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+    <bean
+            id="zsrdKncFlowCategoryDao"
+            parent="KmssAuthBaseDao"
+            class="com.landray.kmss.zsrd.knc.flow.dao.hibernate.ZsrdKncFlowCategoryDaoImp">
+        <property
+                name="modelName"
+                value="com.landray.kmss.zsrd.knc.flow.model.ZsrdKncFlowCategory"/>
+    </bean>
+
+    <bean
+            id="zsrdKncFlowCategoryTarget"
+            parent="KmssBaseTarget"
+            class="com.landray.kmss.zsrd.knc.flow.service.spring.ZsrdKncFlowCategoryServiceImp">
+        <property
+                name="baseDao">
+            <ref
+                    local="zsrdKncFlowCategoryDao"/>
+        </property>
+    </bean>
+    <bean
+            id="zsrdKncFlowCategoryService"
+            parent="KmssBaseService">
+        <property
+                name="target">
+            <ref
+                    local="zsrdKncFlowCategoryTarget"/>
+        </property>
+    </bean>
+
+
+    <bean
+            id="zsrdKncFlowMainDao"
+            parent="KmssExtendDataAreaDao"
+            class="com.landray.kmss.zsrd.knc.flow.dao.hibernate.ZsrdKncFlowMainDaoImp">
+        <property
+                name="modelName"
+                value="com.landray.kmss.zsrd.knc.flow.model.ZsrdKncFlowMain"/>
+    </bean>
+
+    <bean
+            id="zsrdKncFlowMainTarget"
+            parent="KmssExtendDataTarget"
+            class="com.landray.kmss.zsrd.knc.flow.service.spring.ZsrdKncFlowMainServiceImp">
+        <property
+                name="baseDao">
+            <ref
+                    local="zsrdKncFlowMainDao"/>
+        </property>
+        <property
+                name="zsrdKncFlowCategoryService">
+            <ref
+                    local="zsrdKncFlowCategoryService"/>
+        </property>
+    </bean>
+    <bean
+            id="zsrdKncFlowMainService"
+            parent="KmssBaseService">
+        <property
+                name="target">
+            <ref
+                    local="zsrdKncFlowMainTarget"/>
+        </property>
+
+    </bean>
+
+</beans>

@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+<struts-config>
+	<!-- 表单 Bean -->
+	<form-beans>
+		<form-bean
+			name="zsrdKncFlowForm"
+			type="com.landray.kmss.zsrd.knc.risk.forms.ZsrdKncFlowForm" />
+		<form-bean
+			name="zsrdKncFlowLinkForm"
+			type="com.landray.kmss.zsrd.knc.risk.forms.ZsrdKncFlowLinkForm" />
+		<form-bean
+			name="zsrdKncRiskCategoryForm"
+			type="com.landray.kmss.zsrd.knc.risk.forms.ZsrdKncRiskCategoryForm" />
+		<form-bean
+			name="zsrdKncBusinessTypeForm"
+			type="com.landray.kmss.zsrd.knc.risk.forms.ZsrdKncBusinessTypeForm" />
+		<form-bean
+			name="zsrdKncRiskMainForm"
+			type="com.landray.kmss.zsrd.knc.risk.forms.ZsrdKncRiskMainForm" />
+	</form-beans>
+
+	<!-- 操作映射 -->
+	<action-mappings>
+		<action
+			path="/zsrd/knc/risk/zsrd_knc_flow/zsrdKncFlow"
+			type="com.landray.kmss.zsrd.knc.risk.actions.ZsrdKncFlowAction"
+			name="zsrdKncFlowForm"
+			parameter="method"
+			input="edit"
+			unknown="false"
+			validate="true"
+			scope="request">
+			<forward
+				name="view"
+				path="/zsrd/knc/risk/zsrd_knc_flow/zsrdKncFlow_view.jsp" />
+			<forward
+				name="edit"
+				path="/zsrd/knc/risk/zsrd_knc_flow/zsrdKncFlow_edit.jsp" />
+			<forward
+				name="list"
+				path="/zsrd/knc/risk/zsrd_knc_flow/zsrdKncFlow_list.jsp" />
+			<forward 
+			    name="selectSource" 
+			    path="/zsrd/knc/risk/zsrd_knc_flow/zsrdKncFlow_selectSource.jsp"/>
+		</action>
+		<action
+				path="/zsrd/knc/risk/zsrd_knc_risk_main/zsrdKncRiskMainIndex"
+				type="com.landray.kmss.zsrd.knc.risk.actions.ZsrdKncRiskMainIndexAction"
+				parameter="method"
+				name="zsrdKncRiskMainForm"
+				input="edit">
+			<forward
+					name="listChildren"
+					path="/zsrd/knc/risk/zsrd_knc_risk_main/zsrdKncRiskMain_list.jsp">
+			</forward>
+			<forward
+					name="listChildren.4m"
+					path="/zsrd/knc/risk/zsrd_knc_risk_main/mobile/list.jsp">
+			</forward>
+		</action>
+
+		<action
+			path="/zsrd/knc/risk/zsrd_knc_flow_link/zsrdKncFlowLink"
+			type="com.landray.kmss.zsrd.knc.risk.actions.ZsrdKncFlowLinkAction"
+			name="zsrdKncFlowLinkForm"
+			parameter="method"
+			input="edit"
+			unknown="false"
+			validate="true"
+			scope="request">
+			<forward
+				name="view"
+				path="/zsrd/knc/risk/zsrd_knc_flow_link/zsrdKncFlowLink_view.jsp" />
+			<forward
+				name="edit"
+				path="/zsrd/knc/risk/zsrd_knc_flow_link/zsrdKncFlowLink_edit.jsp" />
+			<forward
+				name="list"
+				path="/zsrd/knc/risk/zsrd_knc_flow_link/zsrdKncFlowLink_list.jsp" />
+			<forward 
+			    name="selectSource" 
+			    path="/zsrd/knc/risk/zsrd_knc_flow_link/zsrdKncFlowLink_selectSource.jsp"/>
+		</action>
+
+		<action
+			path="/zsrd/knc/risk/zsrd_knc_risk_category/zsrdKncRiskCategory"
+			type="com.landray.kmss.zsrd.knc.risk.actions.ZsrdKncRiskCategoryAction"
+			name="zsrdKncRiskCategoryForm"
+			parameter="method"
+			input="edit"
+			unknown="false"
+			validate="true"
+			scope="request">
+			<forward
+				name="view"
+				path="/zsrd/knc/risk/zsrd_knc_risk_category/zsrdKncRiskCategory_view.jsp" />
+			<forward
+				name="edit"
+				path="/zsrd/knc/risk/zsrd_knc_risk_category/zsrdKncRiskCategory_edit.jsp" />
+			<forward
+				name="list"
+				path="/zsrd/knc/risk/zsrd_knc_risk_category/zsrdKncRiskCategory_list.jsp" />
+		</action>
+
+		<action
+			path="/zsrd/knc/risk/zsrd_knc_business_type/zsrdKncBusinessType"
+			type="com.landray.kmss.zsrd.knc.risk.actions.ZsrdKncBusinessTypeAction"
+			name="zsrdKncBusinessTypeForm"
+			parameter="method"
+			input="edit"
+			unknown="false"
+			validate="true"
+			scope="request">
+			<forward
+				name="view"
+				path="/zsrd/knc/risk/zsrd_knc_business_type/zsrdKncBusinessType_view.jsp" />
+			<forward
+				name="edit"
+				path="/zsrd/knc/risk/zsrd_knc_business_type/zsrdKncBusinessType_edit.jsp" />
+			<forward
+				name="list"
+				path="/zsrd/knc/risk/zsrd_knc_business_type/zsrdKncBusinessType_list.jsp" />
+		</action>
+
+		<action
+			path="/zsrd/knc/risk/zsrd_knc_risk_main/zsrdKncRiskMain"
+			type="com.landray.kmss.zsrd.knc.risk.actions.ZsrdKncRiskMainAction"
+			name="zsrdKncRiskMainForm"
+			parameter="method"
+			input="edit"
+			unknown="false"
+			validate="true"
+			scope="request">
+			<forward
+				name="view"
+				path="/zsrd/knc/risk/zsrd_knc_risk_main/zsrdKncRiskMain_view.jsp" />
+			<forward
+				name="view.4m"
+				path="/zsrd/knc/risk/zsrd_knc_risk_main/mobile/view.jsp" />
+			<forward
+				name="edit"
+				path="/zsrd/knc/risk/zsrd_knc_risk_main/zsrdKncRiskMain_edit.jsp" />
+			<forward
+				name="data"
+				path="/zsrd/knc/risk/zsrd_knc_risk_main/zsrdKncRiskMain_list.jsp" />
+			<forward
+				name="data.4m"
+				path="/zsrd/knc/risk/zsrd_knc_risk_main/mobile/list.jsp" />
+		</action>
+
+
+	</action-mappings>
+	<!-- 消息资源 -->
+	<message-resources
+		parameter="com.landray.kmss.zsrd.knc.risk.ApplicationResources"
+		key="zsrd-knc-risk" />
+</struts-config>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs
+	xmlns="http://www.example.org/design-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/design-config ../../design.xsd ">
+
+	<module
+		messageKey="zsrd-knc-form:module.zsrd.knc.form"
+		urlPrefix="/zsrd/knc/form/"
+		defaultValidator="roleValidator(role=ROLE_ZSRDKNCFORM_DEFAULT)">
+		<roles>
+			ROLE_ZSRDKNCFORM_DEFAULT;<!-- 默认权限 -->
+			ROLE_ZSRDKNCFORM_ADD;
+			ROLE_ZSRDKNCFORM_DELETE;
+			ROLE_ZSRDKNCFORM_EDIT;
+			ROLE_ZSRDKNCFORM_VIEW;
+		</roles>
+
+		<request
+			path="zsrd_knc_form_category/zsrdKncFormCategory*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.zsrd.knc.form.model.ZsrdKncFormCategory">
+		    <query 
+		         queryString = "method=edit"
+		         validator = "roleValidator(role=ROLE_ZSRDKNCFORM_EDIT)"/>
+		    <query 
+		         queryString = "method=delete"
+		         validator = "roleValidator(role=ROLE_ZSRDKNCFORM_DELETE)"/>
+		     <query 
+		         queryString = "method=add"
+		         validator = "roleValidator(role=ROLE_ZSRDKNCFORM_ADD)"/>
+		     <query 
+		         queryString = "method=view"
+		         validator = "roleValidator(role=ROLE_ZSRDKNCFORM_VIEW)"/>			
+		</request>
+
+		<request
+			path="zsrd_knc_form_main/zsrdKncFormMain*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.zsrd.knc.form.model.ZsrdKncFormMain">
+		</request>
+
+	</module>
+
+	<homePage
+		urlPrefix="zsrd/knc/form"
+		config="/moduleindex_notopic.jsp?nav=/zsrd/knc/form/tree.jsp"
+		url="/zsrd/knc/form/index.jsp"
+		messageKey="zsrd-knc-form:module.zsrd.knc.form" />
+
+	<flowDef
+		modelName="com.landray.kmss.zsrd.knc.form.model.ZsrdKncFormMain"
+		templateModelName="com.landray.kmss.zsrd.knc.form.model.ZsrdKncFormCategory"
+		key="zsrdKncFormMainDoc"
+		templatePropertyName="docCategoryId"
+		moduleMessageKey="zsrd-knc-form:module.zsrd.knc.form"
+		type="oa" /> 
+
+ 
+</configs>

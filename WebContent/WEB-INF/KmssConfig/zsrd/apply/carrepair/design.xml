@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs
+	xmlns="http://www.example.org/design-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/design-config ../../design.xsd ">
+
+	<module
+		messageKey="zsrd-apply-carrepair:module.zsrd.apply.carrepair"
+		urlPrefix="/zsrd/apply/carrepair/"
+		defaultValidator="roleValidator(role=ROLE_ZSRDAPPLYCARREPAIR_DEFAULT)">
+		<roles>
+			ROLE_ZSRDAPPLYCARREPAIR_DEFAULT
+		</roles>
+
+		<request
+			path="zsrd_apply_carrepair/zsrdApplyCarrepair*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.zsrd.apply.carrepair.model.ZsrdApplyCarrepair">
+		</request>
+
+		<request
+			path="zsrd_apply_carpro/zsrdApplyCarpro*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.zsrd.apply.carrepair.model.ZsrdApplyCarpro">
+		</request>
+
+	</module>
+
+	<homePage
+		urlPrefix="zsrd/apply/carrepair"
+		config="/moduleindex_notopic.jsp?nav=/zsrd/apply/carrepair/tree.jsp"
+		url="/zsrd/apply/carrepair/index.jsp"
+		messageKey="zsrd-apply-carrepair:module.zsrd.apply.carrepair" />
+ 
+    <flowDef
+	    modelName="com.landray.kmss.zsrd.apply.carrepair.model.ZsrdApplyCarrepair"
+	    templateModelName="com.landray.kmss.zsrd.apply.carrepair.model.ZsrdApplyCarrepair"
+	    key="ZsrdApplyCarrepairDoc"
+	    moduleMessageKey="zsrd-apply-vacate:module.zsrd.apply.carrepair"
+	    type="oa" />
+ 
+ 
+</configs>

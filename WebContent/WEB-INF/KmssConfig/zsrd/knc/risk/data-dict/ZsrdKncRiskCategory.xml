@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<models
+	xmlns="http://www.example.org/design-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/design-config ../../../data-dict.xsd ">
+	<model
+		modelName="com.landray.kmss.zsrd.knc.risk.model.ZsrdKncRiskCategory"
+		messageKey="zsrd-knc-risk:table.zsrdKncRiskCategory"
+		displayProperty="fdId"
+		serviceBean="zsrdKncRiskCategoryService"
+		table="zsrd_knc_risk_category"
+		url="/zsrd/knc/risk/zsrd_knc_risk_category/zsrdKncRiskCategory.do?method=view&amp;fdId=${fdId}">
+
+		<idProperty>
+			<generator
+				type="assigned" />
+		</idProperty>
+
+		<simpleProperty
+			name="fdName"
+			messageKey="zsrd-knc-risk:zsrdKncRiskCategory.fdName"
+			type="String"
+			column="fd_name"
+			notNull="false"
+			length="36"
+			validate="false" />
+
+		<simpleProperty
+			name="fdOrder"
+			messageKey="zsrd-knc-risk:zsrdKncRiskCategory.fdOrder"
+			type="Integer"
+			column="fd_order"
+			notNull="false"
+			length="4"
+			validate="false" />
+
+		<modelProperty
+			name="fdParent"
+			messageKey="zsrd-knc-risk:zsrdKncRiskCategory.fdParent"
+			type="com.landray.kmss.zsrd.knc.risk.model.ZsrdKncRiskCategory"
+			column="fd_parent_id"
+			notNull="false"
+			validate="false" />
+
+ 
+		<simpleProperty
+			name="docCreateTime"
+			messageKey="zsrd-knc-risk:zsrdKncRiskCategory.docCreateTime"
+			type="DateTime"
+			column="doc_create_time"
+			notNull="true"
+			unique="false" />
+		<simpleProperty
+			name="docAlterTime"
+			messageKey="zsrd-knc-risk:zsrdKncRiskCategory.docAlterTime"
+			type="DateTime"
+			column="doc_alter_time"
+			notNull="false"
+			unique="false" />
+		<modelProperty
+			name="docAlteror"
+			messageKey="zsrd-knc-risk:zsrdKncRiskCategory.docAlteror"
+			type="com.landray.kmss.sys.organization.model.SysOrgPerson"
+			column="doc_alteror_id"
+			notNull="false"
+			unique="false"
+			/>
+		<modelProperty
+			name="docCreator"
+			messageKey="zsrd-knc-risk:zsrdKncRiskCategory.docCreator"
+			type="com.landray.kmss.sys.organization.model.SysOrgPerson"
+			column="doc_creator_id"
+			notNull="true"
+			unique="false"
+			 />
+		<simpleProperty
+			name="fdHierarchyId"
+			messageKey="zsrd-knc-risk:zsrdKncRiskCategory.fdHierarchyId"
+			type="String"
+			column="fd_hierarchy_id"
+			notNull="false"
+			unique="false"
+			length="1000" />
+		<modelProperty
+			name="hbmParent"
+			messageKey="zsrd-knc-risk:zsrdKncRiskCategory.hbmParent"
+			type="com.landray.kmss.sys.news.model.SysNewsTemplate"
+			cascade="save-update"
+			column="fd_parent_id"
+			notNull="false"
+			unique="false"
+			/>
+		<simpleProperty
+			name="fdIsinheritMaintainer"
+			messageKey="zsrd-knc-risk:zsrdKncRiskCategory.fdIsinheritMaintainer"
+			type="Boolean"
+			column="fd_isinherit_maintainer"
+			notNull="false"
+			unique="false"
+			length="1" />
+		<simpleProperty
+			name="fdIsinheritUser"
+			messageKey="zsrd-knc-risk:zsrdKncRiskCategory.fdIsinheritUser"
+			type="Boolean"
+			column="fd_isinherit_user"
+			notNull="false"
+			unique="false"
+			length="1" />
+		<simpleProperty
+			name="authReaderFlag"
+			messageKey="zsrd-knc-risk:zsrdKncRiskCategory.authReaderFlag"
+			type="Boolean"
+			column="auth_reader_flag"
+			notNull="false"
+			unique="false"
+			canDisplay="false"
+			length="1" />
+		<simpleProperty
+			name="authNotReaderFlag"
+			messageKey="zsrd-knc-risk:zsrdKncRiskCategory.authNotReaderFlag"
+			type="Boolean"
+			column="auth_not_reader_flag"
+			notNull="false"
+			unique="false"
+			length="1" />
+		<listProperty
+			name="authOtherReaders"
+			messageKey="zsrd-knc-risk:zsrdKncRiskCategory.authOtherReaders"
+			column="fd_template_id"
+			type="com.landray.kmss.sys.organization.model.SysOrgElement"
+			elementColumn="auth_other_reader_id"
+			table="zsrd_knc_risk_category_oreader"
+			inverse="false"
+			canDisplay="false" />
+		<listProperty
+			name="authOtherEditors"
+			messageKey="zsrd-knc-risk:zsrdKncRiskCategory.authOtherEditors"
+			column="fd_template_id"
+			type="com.landray.kmss.sys.organization.model.SysOrgElement"
+			elementColumn="auth_other_editor_id"
+			table="zsrd_knc_risk_category_oeditor"
+			inverse="false"
+			canDisplay="false" />
+		<listProperty
+			name="authAllEditors"
+			messageKey="zsrd-knc-risk:zsrdKncRiskCategory.authAllEditors"
+			column="fd_tmp_id"
+			type="com.landray.kmss.sys.organization.model.SysOrgElement"
+			elementColumn="auth_all_editor_id"
+			table="zsrd_knc_risk_category_aeditor"
+			inverse="false"
+			canDisplay="false" />
+		<listProperty
+			name="authAllReaders"
+			messageKey="zsrd-knc-risk:zsrdKncRiskCategory.authAllReaders"
+			column="fd_template_id"
+			type="com.landray.kmss.sys.organization.model.SysOrgElement"
+			elementColumn="auth_all_reader_id"
+			table="zsrd_knc_risk_category_areader"
+			inverse="false"
+			canDisplay="false" />
+		<listProperty
+			name="authEditors"
+			messageKey="zsrd-knc-risk:zsrdKncRiskCategory.authEditors"
+			column="fd_template_id"
+			type="com.landray.kmss.sys.organization.model.SysOrgElement"
+			elementColumn="auth_editor_id"
+			table="zsrd_knc_risk_category_editor"
+			inverse="false"
+			 />
+		<listProperty
+			name="authReaders"
+			messageKey="zsrd-knc-risk:zsrdKncRiskCategory.authReaders"
+			column="fd_template_id"
+			type="com.landray.kmss.sys.organization.model.SysOrgElement"
+			elementColumn="auth_reader_id"
+			table="zsrd_knc_risk_category_reader"
+			inverse="false"
+			 />
+ 
+	</model>
+</models>

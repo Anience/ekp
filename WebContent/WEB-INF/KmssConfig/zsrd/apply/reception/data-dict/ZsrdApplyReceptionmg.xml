@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<models
+	xmlns="http://www.example.org/design-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/design-config ../../../data-dict.xsd ">
+	<model
+		modelName="com.landray.kmss.zsrd.apply.reception.model.ZsrdApplyReceptionmg"
+		messageKey="zsrd-apply-reception:table.zsrdApplyReceptionmg"
+		displayProperty="fdTypename"
+		serviceBean="zsrdApplyReceptionmgService"
+		table="zsrd_apply_receptionmg"
+		url="/zsrd/apply/reception/zsrd_apply_receptionmg/zsrdApplyReceptionmg.do?method=view&amp;fdId=${fdId}">
+
+		<idProperty>
+			<generator
+				type="assigned" />
+		</idProperty>
+
+		<simpleProperty
+			name="fdTypename"
+			messageKey="zsrd-apply-reception:zsrdApplyReceptionmg.fdTypename"
+			type="String"
+			column="fd_typename"
+			notNull="false"
+			length="200"
+			validate="false" />
+
+		<simpleProperty
+			name="fdPrice"
+			messageKey="zsrd-apply-reception:zsrdApplyReceptionmg.fdPrice"
+			type="String"
+			column="fd_price"
+			notNull="false"
+			length="36"
+			validate="false" />
+
+		<simpleProperty
+			name="fdNum"
+			messageKey="zsrd-apply-reception:zsrdApplyReceptionmg.fdNum"
+			type="String"
+			column="fd_num"
+			notNull="false"
+			length="36"
+			validate="false" />
+
+		<simpleProperty
+			name="fdPer"
+			messageKey="zsrd-apply-reception:zsrdApplyReceptionmg.fdPer"
+			type="String"
+			column="fd_per"
+			notNull="false"
+			length="36"
+			validate="false" />
+
+		<modelProperty
+			name="fd"
+			messageKey="zsrd-apply-reception:zsrdApplyReceptionmg.fd"
+			type="com.landray.kmss.zsrd.apply.reception.model.ZsrdApplyReception"
+			column="fd_pid"
+			notNull="false"
+			validate="false" />
+
+ 
+
+ 
+	</model>
+</models>

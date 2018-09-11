@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<models
+	xmlns="http://www.example.org/design-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/design-config ../../../data-dict.xsd ">
+	<model
+		modelName="com.landray.kmss.zsrd.knc.stdquery.model.ZsrdKncStdQueryProgram"
+		messageKey="zsrd-knc-stdquery:table.zsrdKncStdQueryProgram"
+		displayProperty="fdName"
+		serviceBean="zsrdKncStdQueryProgramService"
+		table="zsrd_knc_std_query_program"
+		url="/zsrd/knc/stdquery/zsrd_knc_std_query_program/zsrdKncStdQueryProgram.do?method=view&amp;fdId=${fdId}">
+
+		<idProperty>
+			<generator
+				type="assigned" />
+		</idProperty>
+
+		<simpleProperty
+			name="fdName"
+			messageKey="zsrd-knc-stdquery:zsrdKncStdQueryProgram.fdName"
+			type="String"
+			column="fd_name"
+			notNull="false"
+			length="50"
+			validate="false" />
+
+ 
+
+ 
+	</model>
+</models>

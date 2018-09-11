@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<column-enums>
+<type
+		name="zsrd_apply_evection_fd_vehicle">
+		<value-label>
+			<value>1</value>
+			<label-key>enumeration_zsrd_apply_evection_fd_vehicle_1</label-key>
+			<bundle>zsrd-apply-evection</bundle>
+		</value-label>
+		<value-label>
+			<value>2</value>
+			<label-key>enumeration_zsrd_apply_evection_fd_vehicle_2</label-key>
+			<bundle>zsrd-apply-evection</bundle>
+		</value-label>
+		<value-label>
+			<value>3</value>
+			<label-key>enumeration_zsrd_apply_evection_fd_vehicle_3</label-key>
+			<bundle>zsrd-apply-evection</bundle>
+		</value-label>
+		<value-label>
+			<value>4</value>
+			<label-key>enumeration_zsrd_apply_evection_fd_vehicle_4</label-key>
+			<bundle>zsrd-apply-evection</bundle>
+		</value-label>
+		<value-label>
+			<value>5</value>
+			<label-key>enumeration_zsrd_apply_evection_fd_vehicle_5</label-key>
+			<bundle>zsrd-apply-evection</bundle>
+		</value-label>
+		<value-label>
+			<value>6</value>
+			<label-key>enumeration_zsrd_apply_evection_fd_vehicle_6</label-key>
+			<bundle>zsrd-apply-evection</bundle>
+		</value-label>
+	</type>
+</column-enums>

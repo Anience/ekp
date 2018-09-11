@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+    <bean
+            id="zsrdKncStdCategoryDao"
+            parent="KmssAuthBaseDao"
+            class="com.landray.kmss.zsrd.knc.std.dao.hibernate.ZsrdKncStdCategoryDaoImp">
+        <property
+                name="modelName"
+                value="com.landray.kmss.zsrd.knc.std.model.ZsrdKncStdCategory"/>
+    </bean>
+
+    <bean
+            id="zsrdKncStdCategoryTarget"
+            parent="KmssBaseTarget"
+            class="com.landray.kmss.zsrd.knc.std.service.spring.ZsrdKncStdCategoryServiceImp">
+        <property
+                name="baseDao">
+            <ref
+                    local="zsrdKncStdCategoryDao"/>
+        </property>
+        
+    </bean>
+    <bean
+            id="zsrdKncStdCategoryService"
+            parent="KmssBaseService">
+        <property
+                name="target">
+            <ref
+                    local="zsrdKncStdCategoryTarget"/>
+        </property>
+    </bean>
+
+
+    <bean
+            id="zsrdKncStdMainDao"
+            parent="KmssExtendDataAreaDao"
+            class="com.landray.kmss.zsrd.knc.std.dao.hibernate.ZsrdKncStdMainDaoImp">
+        <property
+                name="modelName"
+                value="com.landray.kmss.zsrd.knc.std.model.ZsrdKncStdMain"/>
+    </bean>
+
+    <bean
+            id="zsrdKncStdMainTarget"
+            parent="KmssExtendDataTarget"
+            class="com.landray.kmss.zsrd.knc.std.service.spring.ZsrdKncStdMainServiceImp">
+        <property
+                name="baseDao">
+            <ref
+                    local="zsrdKncStdMainDao"/>
+        </property>
+        <property
+                name="zsrdKncStdCategoryService">
+            <ref
+                    local="zsrdKncStdCategoryService"/>
+        </property>
+        <property
+                name="sysOrgElementService">
+            <ref
+                    bean="sysOrgElementService"/>
+        </property>
+    </bean>
+    <bean
+            id="zsrdKncStdMainService"
+            parent="KmssBaseService">
+        <property
+                name="target">
+            <ref
+                    local="zsrdKncStdMainTarget"/>
+        </property>
+    </bean>
+    
+
+
+</beans>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<models
+	xmlns="http://www.example.org/design-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/design-config ../../../data-dict.xsd ">
+	<model
+		modelName="com.landray.kmss.zsrd.knc.stdquery.model.ZsrdKncStdQueryCatProg"
+		messageKey="zsrd-knc-stdquery:table.zsrdKncStdQueryCatProg"
+		displayProperty="fdCatid"
+		serviceBean="zsrdKncStdQueryCatProgService"
+		table="zsrd_knc_std_query_cat_prog"
+		url="/zsrd/knc/stdquery/zsrd_knc_std_query_cat_prog/zsrdKncStdQueryCatProg.do?method=view&amp;fdId=${fdId}">
+
+		<idProperty>
+			<generator
+					type="assigned" />
+		</idProperty>
+
+
+		<modelProperty
+			name="fdCat"
+			messageKey="zsrd-knc-stdquery:zsrdKncStdQueryCatProg.fdCat"
+			type="com.landray.kmss.zsrd.knc.stdquery.model.ZsrdKncStdQueryCategory"
+			column="fd_catid"
+			notNull="true"
+			unique="true"
+			constrained="true" />
+
+		<modelProperty
+			name="fdProg"
+			messageKey="zsrd-knc-stdquery:zsrdKncStdQueryCatProg.fdProg"
+			type="com.landray.kmss.zsrd.knc.stdquery.model.ZsrdKncStdQueryProgram"
+			column="fd_prog_code"
+			notNull="true"
+			unique="true"
+			constrained="true" />
+
+ 
+
+ 
+	</model>
+</models>

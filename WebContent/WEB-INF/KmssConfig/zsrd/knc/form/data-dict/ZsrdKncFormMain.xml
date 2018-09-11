@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<models
+	xmlns="http://www.example.org/design-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/design-config ../../../data-dict.xsd ">
+	<model
+		modelName="com.landray.kmss.zsrd.knc.form.model.ZsrdKncFormMain"
+		messageKey="zsrd-knc-form:table.zsrdKncFormMain"
+		displayProperty="docSubject"
+		serviceBean="zsrdKncFormMainService"
+		table="zsrd_knc_form_main"
+		url="/zsrd/knc/form/zsrd_knc_form_main/zsrdKncFormMain.do?method=view&amp;fdId=${fdId}">
+
+		<idProperty>
+			<generator
+				type="assigned" />
+		</idProperty>
+
+		<simpleProperty
+			name="docSubject"
+			messageKey="zsrd-knc-form:zsrdKncFormMain.docSubject"
+			type="String"
+			column="doc_subject"
+			notNull="false"
+			length="200"
+			validate="false" />
+
+		<simpleProperty
+			name="fdDescription"
+			messageKey="zsrd-knc-form:zsrdKncFormMain.fdDescription"
+			type="String"
+			column="fd_description"
+			notNull="false"
+			length="500"
+			validate="false" />
+
+		<simpleProperty
+			name="docStatus"
+			messageKey="zsrd-knc-form:zsrdKncFormMain.docStatus"
+			type="String"
+			column="doc_status"
+			notNull="false"
+			length="2"
+			validate="false" />
+
+		<simpleProperty
+			name="docCreateTime"
+			messageKey="zsrd-knc-form:zsrdKncFormMain.docCreateTime"
+			type="DateTime"
+			column="doc_create_time"
+			notNull="false"
+			validate="false" />
+
+		<simpleProperty
+			name="docAlterTime"
+			messageKey="zsrd-knc-form:zsrdKncFormMain.docAlterTime"
+			type="DateTime"
+			column="doc_alter_time"
+			notNull="false"
+			validate="false" />
+
+		<simpleProperty
+			name="fdLastModifiedTime"
+			messageKey="zsrd-knc-form:zsrdKncFormMain.fdLastModifiedTime"
+			type="DateTime"
+			column="fd_last_modified_time"
+			notNull="false"
+			validate="false" />
+
+		<simpleProperty
+			name="docPublishTime"
+			messageKey="zsrd-knc-form:zsrdKncFormMain.docPublishTime"
+			type="DateTime"
+			column="doc_publish_time"
+			notNull="false"
+			validate="false" />
+
+		<simpleProperty
+			name="docCategoryId"
+			messageKey="zsrd-knc-form:zsrdKncFormMain.docCategoryId"
+			type="String"
+			column="doc_category_id"
+			notNull="false"
+			length="36"
+			validate="false" />
+
+		<simpleProperty
+			name="fdVersion"
+			messageKey="zsrd-knc-form:zsrdKncFormMain.fdVersion"
+			type="String"
+			column="fd_version"
+			notNull="false"
+			length="36"
+			validate="false" />
+
+		<simpleProperty
+			name="fdSize"
+			messageKey="zsrd-knc-form:zsrdKncFormMain.fdSize"
+			type="String"
+			column="fd_size"
+			notNull="false"
+			length="36"
+			validate="false" />
+
+		<modelProperty
+			name="docCreator"
+			messageKey="zsrd-knc-form:zsrdKncFormMain.docCreator"
+			type="com.landray.kmss.sys.organization.model.SysOrgElement"
+			column="doc_creator_id"
+			notNull="false"
+			validate="false" />
+
+ 
+
+ 
+	</model>
+</models>

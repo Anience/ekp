@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs
+	xmlns="http://www.example.org/design-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/design-config ../../design.xsd ">
+
+	<module
+		messageKey="zsrd-apply-vacate:module.zsrd.apply.vacate"
+		urlPrefix="/zsrd/apply/vacate/"
+		defaultValidator="roleValidator(role=ROLE_ZSRDAPPLYVACATE_DEFAULT)">
+		<roles>
+			ROLE_ZSRDAPPLYVACATE_DEFAULT
+		</roles>
+
+		<request
+			path="zsrd_apply_vacate/zsrdApplyVacate*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.zsrd.apply.vacate.model.ZsrdApplyVacate">
+		</request>
+
+	</module>
+
+	<homePage
+		urlPrefix="zsrd/apply/vacate"
+		config="/moduleindex_notopic.jsp?nav=/zsrd/apply/vacate/tree.jsp"
+		url="/zsrd/apply/vacate/index.jsp"
+		messageKey="zsrd-apply-vacate:module.zsrd.apply.vacate" />
+ 
+    <flowDef
+	    modelName="com.landray.kmss.zsrd.apply.vacate.model.ZsrdApplyVacate"
+	    templateModelName="com.landray.kmss.zsrd.apply.vacate.model.ZsrdApplyVacate"
+	    key="ZsrdApplyVacateDoc"
+	    moduleMessageKey="zsrd-apply-vacate:module.zsrd.apply.vacate"
+	    type="oa" />
+ 
+</configs>

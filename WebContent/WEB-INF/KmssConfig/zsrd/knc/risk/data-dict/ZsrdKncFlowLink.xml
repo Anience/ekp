@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<models
+	xmlns="http://www.example.org/design-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/design-config ../../../data-dict.xsd ">
+	<model
+		modelName="com.landray.kmss.zsrd.knc.risk.model.ZsrdKncFlowLink"
+		messageKey="zsrd-knc-risk:table.zsrdKncFlowLink"
+		displayProperty="fdId"
+		serviceBean="zsrdKncFlowLinkService"
+		table="zsrd_knc_flow_link"
+		url="/zsrd/knc/risk/zsrd_knc_flow_link/zsrdKncFlowLink.do?method=view&amp;fdId=${fdId}">
+
+		<idProperty>
+			<generator
+				type="native" />
+		</idProperty>
+
+		<simpleProperty
+			name="fdName"
+			messageKey="zsrd-knc-risk:zsrdKncFlowLink.fdName"
+			type="String"
+			column="fd_name"
+			notNull="false"
+			length="50"
+			validate="false" />
+
+		<simpleProperty
+			name="fdFlowId"
+			messageKey="zsrd-knc-risk:zsrdKncFlowLink.fdFlowId"
+			type="String"
+			column="fd_flow_id"
+			notNull="false"
+			length="36"
+			validate="false" />
+
+		<modelProperty
+			name="fdCode"
+			messageKey="zsrd-knc-risk:zsrdKncFlowLink.fdCode"
+			type="com.landray.kmss.zsrd.knc.risk.model.ZsrdKncFlow"
+			column="fd_code"
+			notNull="false"
+			validate="false" />
+
+ 
+
+ 
+	</model>
+</models>

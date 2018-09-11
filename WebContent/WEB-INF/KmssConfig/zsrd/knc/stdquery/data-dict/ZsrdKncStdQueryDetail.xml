@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<models
+	xmlns="http://www.example.org/design-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/design-config ../../../data-dict.xsd ">
+	<model
+		modelName="com.landray.kmss.zsrd.knc.stdquery.model.ZsrdKncStdQueryDetail"
+		messageKey="zsrd-knc-stdquery:table.zsrdKncStdQueryDetail"
+		displayProperty="docName"
+		serviceBean="zsrdKncStdQueryDetailService"
+		table="zsrd_knc_std_query_detail"
+		url="/zsrd/knc/stdquery/zsrd_knc_std_query_detail/zsrdKncStdQueryDetail.do?method=view&amp;fdId=${fdId}">
+
+		<idProperty>
+			<generator
+				type="assigned" />
+		</idProperty>
+
+		<simpleProperty
+			name="docName"
+			messageKey="zsrd-knc-stdquery:zsrdKncStdQueryDetail.docName"
+			type="String"
+			column="doc_name"
+			notNull="false"
+			length="200"
+			validate="false" />
+
+		<simpleProperty
+			name="docCode"
+			messageKey="zsrd-knc-stdquery:zsrdKncStdQueryDetail.docCode"
+			type="String"
+			column="doc_code"
+			notNull="false"
+			length="1000000"
+			validate="false" />
+
+		<simpleProperty
+			name="docStatus"
+			messageKey="zsrd-knc-stdquery:zsrdKncStdQueryDetail.docStatus"
+			type="String"
+			column="doc_status"
+			notNull="false"
+			length="2"
+			validate="false" />
+
+		<simpleProperty
+			name="docCreateTime"
+			messageKey="zsrd-knc-stdquery:zsrdKncStdQueryDetail.docCreateTime"
+			type="DateTime"
+			column="doc_create_time"
+			notNull="false"
+			validate="false" />
+
+		<simpleProperty
+			name="fdLastModifiedTime"
+			messageKey="zsrd-knc-stdquery:zsrdKncStdQueryDetail.fdLastModifiedTime"
+			type="DateTime"
+			column="fd_last_modified_time"
+			notNull="false"
+			validate="false" />
+
+		<simpleProperty
+			name="fdVersion"
+			messageKey="zsrd-knc-stdquery:zsrdKncStdQueryDetail.fdVersion"
+			type="String"
+			column="fd_version"
+			notNull="false"
+			length="36"
+			validate="false" />
+
+		<simpleProperty
+			name="fdSize"
+			messageKey="zsrd-knc-stdquery:zsrdKncStdQueryDetail.fdSize"
+			type="String"
+			column="fd_size"
+			notNull="false"
+			length="36"
+			validate="false" />
+
+		<simpleProperty
+			name="fdDescription"
+			messageKey="zsrd-knc-stdquery:zsrdKncStdQueryDetail.fdDescription"
+			type="String"
+			column="fd_description"
+			notNull="false"
+			length="1000"
+			validate="false" />
+
+		<modelProperty
+			name="docCategory"
+			messageKey="zsrd-knc-stdquery:zsrdKncStdQueryDetail.docCategory"
+			type="com.landray.kmss.zsrd.knc.stdquery.model.ZsrdKncStdQueryCategory"
+			column="doc_category_id"
+			notNull="false"
+			validate="false" />
+
+		<modelProperty
+			name="docCreator"
+			messageKey="zsrd-knc-stdquery:zsrdKncStdQueryDetail.docCreator"
+			type="com.landray.kmss.sys.organization.model.SysOrgElement"
+			column="doc_creator_id"
+			notNull="false"
+			validate="false" />
+
+ 
+
+ 
+	</model>
+</models>

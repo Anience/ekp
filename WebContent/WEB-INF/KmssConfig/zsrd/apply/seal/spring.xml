@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	
+	<bean
+		id="zsrdApplySealDao"
+		parent="KmssExtendDataAreaDao"
+		class="com.landray.kmss.zsrd.apply.seal.dao.hibernate.ZsrdApplySealDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.zsrd.apply.seal.model.ZsrdApplySeal" />
+	</bean>
+
+	<bean
+		id="zsrdApplySealTarget"
+		parent="KmssExtendDataTarget"
+		class="com.landray.kmss.zsrd.apply.seal.service.spring.ZsrdApplySealServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="zsrdApplySealDao" />
+		</property>
+		<property
+			name="zsrdApplySealDao">
+			<ref
+				local="zsrdApplySealDao" />
+		</property>
+	</bean>
+	<bean
+		id="zsrdApplySealService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="zsrdApplySealTarget" />
+		</property>
+	</bean>
+
+</beans>

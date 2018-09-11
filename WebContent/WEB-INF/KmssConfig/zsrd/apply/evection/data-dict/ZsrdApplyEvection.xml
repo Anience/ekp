@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<models
+	xmlns="http://www.example.org/design-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/design-config ../../../data-dict.xsd ">
+	<model
+		modelName="com.landray.kmss.zsrd.apply.evection.model.ZsrdApplyEvection"
+		messageKey="zsrd-apply-evection:table.zsrdApplyEvection"
+		displayProperty="fdDepart"
+		serviceBean="zsrdApplyEvectionService"
+		table="zsrd_apply_evection"
+		url="/zsrd/apply/evection/zsrd_apply_evection/zsrdApplyEvection.do?method=view&amp;fdId=${fdId}">
+
+		<idProperty>
+			<generator
+				type="assigned" />
+		</idProperty>
+
+		<simpleProperty
+			name="docStatus"
+			messageKey="zsrd-apply-evection:zsrdApplyEvection.docStatus"
+			type="String"
+			column="doc_status"
+			notNull="false"
+			length="2"
+			validate="false" />
+
+		<simpleProperty
+			name="docCreateTime"
+			messageKey="zsrd-apply-evection:zsrdApplyEvection.docCreateTime"
+			type="DateTime"
+			column="doc_create_time"
+			notNull="false"
+			validate="false" />
+
+		<simpleProperty
+			name="fdToPlace"
+			messageKey="zsrd-apply-evection:zsrdApplyEvection.fdToPlace"
+			type="String"
+			column="fd_to_place"
+			notNull="false"
+			length="100"
+			validate="false" />
+
+		<simpleProperty
+			name="fdTask"
+			messageKey="zsrd-apply-evection:zsrdApplyEvection.fdTask"
+			type="String"
+			column="fd_task"
+			notNull="false"
+			length="500"
+			validate="false" />
+
+		<simpleProperty
+			name="fdVehicle"
+			messageKey="zsrd-apply-evection:zsrdApplyEvection.fdVehicle"
+			type="String"
+			column="fd_vehicle"
+			notNull="false"
+			length="36"
+			validate="false" />
+
+		<simpleProperty
+			name="fdEvectionStart"
+			messageKey="zsrd-apply-evection:zsrdApplyEvection.fdEvectionStart"
+			type="DateTime"
+			column="fd_evection_start"
+			notNull="false"
+			validate="false" />
+
+		<simpleProperty
+			name="fdEvectionEnd"
+			messageKey="zsrd-apply-evection:zsrdApplyEvection.fdEvectionEnd"
+			type="DateTime"
+			column="fd_evection_end"
+			notNull="false"
+			validate="false" />
+
+		<modelProperty
+			name="docCreator"
+			messageKey="zsrd-apply-evection:zsrdApplyEvection.docCreator"
+			type="com.landray.kmss.sys.organization.model.SysOrgElement"
+			column="doc_creator_id"
+			notNull="false"
+			validate="false" />
+
+		<modelProperty
+			name="fdDepart"
+			messageKey="zsrd-apply-evection:zsrdApplyEvection.fdDepart"
+			type="com.landray.kmss.common.model.SysOrgElement"
+			column="fd_depart"
+			notNull="false"
+			validate="false" />
+
+		<modelProperty
+			name="fdPosition"
+			messageKey="zsrd-apply-evection:zsrdApplyEvection.fdPosition"
+			type="com.landray.kmss.common.model.SysOrgElement"
+			column="fd_position"
+			notNull="false"
+			validate="false" />
+
+ 
+		<listProperty
+			name="authTmpReaders"
+			messageKey="zsrd-apply-evection:zsrdApplyEvection.authTmpReaders"
+			column="fd_template_id"
+			type="com.landray.kmss.sys.organization.model.SysOrgElement"
+			elementColumn="auth_reader_id"
+			table="zsrd_apply_evection_def_reader"
+			inverse="false"
+			canDisplay="false" />
+		<listProperty
+			name="authTmpEditors"
+			messageKey="zsrd-apply-evection:zsrdApplyEvection.authTmpEditors"
+			column="fd_template_id"
+			type="com.landray.kmss.sys.organization.model.SysOrgElement"
+			elementColumn="auth_editor_id"
+			table="zsrd_apply_evection_def_editor"
+			inverse="false"
+			canDisplay="false" />
+		<listProperty
+			name="authTmpAttPrints"
+			messageKey="zsrd-apply-evection:zsrdApplyEvection.authTmpAttPrints"
+			column="fd_template_id"
+			type="com.landray.kmss.sys.organization.model.SysOrgElement"
+			elementColumn="auth_att_print_id"
+			table="zsrd_apply_evection_def_attprint"
+			inverse="false"
+			canDisplay="false" />
+		<listProperty
+			name="authTmpAttCopys"
+			messageKey="zsrd-apply-evection:zsrdApplyEvection.authTmpAttCopys"
+			column="fd_template_id"
+			type="com.landray.kmss.sys.organization.model.SysOrgElement"
+			elementColumn="auth_att_copy_id"
+			table="zsrd_apply_evection_def_attcopy"
+			inverse="false"
+			canDisplay="false" />
+		<listProperty
+			name="authTmpAttDownloads"
+			messageKey="zsrd-apply-evection:zsrdApplyEvection.authTmpAttDownloads"
+			column="fd_template_id"
+			type="com.landray.kmss.sys.organization.model.SysOrgElement"
+			elementColumn="auth_att_download_id"
+			table="zsrd_apply_evection_def_attdl"
+			inverse="false"
+			canDisplay="false" />
+		<simpleProperty
+			name="authRBPFlag"
+			messageKey="zsrd-apply-evection:zsrdApplyEvection.authRBPFlag"
+			type="Boolean"
+			column="fd_rbp_flag"
+			canDisplay="true"
+			readOnly="false" />
+		<simpleProperty
+			name="authChangeAtt"
+			messageKey="zsrd-apply-evection:zsrdApplyEvection.authChangeAtt"
+			type="Boolean"
+			column="fd_change_att"
+			canDisplay="false"
+			readOnly="false" />
+		<simpleProperty
+			name="authTmpAttNocopy"
+			messageKey="zsrd-apply-evection:zsrdApplyEvection.authTmpAttNocopy"
+			type="Boolean"
+			column="auth_tmp_att_nocopy"
+			notNull="false"
+			unique="false"
+			length="1"
+			canDisplay="false" />
+		<simpleProperty
+			name="authTmpAttNodownload"
+			messageKey="zsrd-apply-evection:zsrdApplyEvection.authTmpAttNodownload"
+			type="Boolean"
+			column="auth_tmp_att_nodownload"
+			notNull="false"
+			unique="false"
+			length="1"
+			canDisplay="false" />
+		<simpleProperty
+			name="authTmpAttNoprint"
+			messageKey="zsrd-apply-evection:zsrdApplyEvection.authTmpAttNoprint"
+			type="Boolean"
+			column="auth_tmp_att_noprint"
+			notNull="false"
+			unique="false"
+			length="1"
+			canDisplay="false" />
+ 
+	</model>
+</models>

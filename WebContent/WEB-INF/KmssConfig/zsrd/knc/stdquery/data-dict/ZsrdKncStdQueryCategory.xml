@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<models
+	xmlns="http://www.example.org/design-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/design-config ../../../data-dict.xsd ">
+	<model
+		modelName="com.landray.kmss.zsrd.knc.stdquery.model.ZsrdKncStdQueryCategory"
+		messageKey="zsrd-knc-stdquery:table.zsrdKncStdQueryCategory"
+		displayProperty="fdName"
+		serviceBean="zsrdKncStdQueryCategoryService"
+		table="zsrd_knc_std_query_category"
+		url="/zsrd/knc/stdquery/zsrd_knc_std_query_category/zsrdKncStdQueryCategory.do?method=view&amp;fdId=${fdId}">
+
+		<idProperty>
+			<generator
+				type="assigned" />
+		</idProperty>
+
+		<simpleProperty
+			name="fdName"
+			messageKey="zsrd-knc-stdquery:zsrdKncStdQueryCategory.fdName"
+			type="String"
+			column="fd_name"
+			notNull="true"
+			length="200"
+			validate="true" />
+
+		<simpleProperty
+			name="fdOrder"
+			messageKey="zsrd-knc-stdquery:zsrdKncStdQueryCategory.fdOrder"
+			type="Integer"
+			column="fd_order"
+			notNull="false"
+			length="10"
+			validate="true" />
+
+		<simpleProperty
+			name="docCreateTime"
+			messageKey="zsrd-knc-stdquery:zsrdKncStdQueryCategory.docCreateTime"
+			type="DateTime"
+			column="doc_create_time"
+			notNull="false"
+			validate="false" />
+
+		<simpleProperty
+			name="fdHierarchyId"
+			messageKey="zsrd-knc-stdquery:zsrdKncStdQueryCategory.fdHierarchyId"
+			type="String"
+			column="fd_hierarchy_id"
+			notNull="false"
+			length="900"
+			validate="false" />
+
+		<modelProperty
+			name="fdParent"
+			messageKey="zsrd-knc-stdquery:zsrdKncStdQueryCategory.fdParent"
+			type="com.landray.kmss.zsrd.knc.stdquery.model.ZsrdKncStdQueryCategory"
+			column="fd_parent_id"
+			notNull="false"
+			validate="false" />
+
+		<modelProperty
+			name="docCreator"
+			messageKey="zsrd-knc-stdquery:zsrdKncStdQueryCategory.docCreator"
+			type="com.landray.kmss.sys.organization.model.SysOrgElement"
+			column="doc_creator_id"
+			notNull="false"
+			validate="false" />
+
+        <simpleProperty
+			name="fdCategoryName"
+			messageKey="zsrd-knc-stdquery:zsrdKncStdQueryCategory.fdCategoryName"
+			type="String"
+			column="fd_category_name"
+			notNull="false"
+			length="36"
+			validate="false" />
+
+ 
+	</model>
+</models>

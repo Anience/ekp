@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs
+        xmlns="http://www.example.org/design-config"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.example.org/design-config ../../design.xsd ">
+
+    <module
+            messageKey="zsrd-knc-workofplan:module.zsrd.knc.workofplan"
+            urlPrefix="/zsrd/knc/workofplan/"
+            defaultValidator="roleValidator(role=ROLE_ZSRDKNCWORKOFPLAN_DEFAULT)">
+        <roles>
+            ROLE_ZSRDKNCWORKOFPLAN_DEFAULT
+        </roles>
+
+        <request
+                path="zsrd_knc_work_of_plan/zsrdKncWorkOfPlan*"
+                validatorParameter="recid=fdId,model=com.landray.kmss.zsrd.knc.workofplan.model.ZsrdKncWorkOfPlan">
+        </request>
+
+    </module>
+
+    <homePage
+            urlPrefix="zsrd/knc/workofplan"
+            config="/moduleindex_notopic.jsp?nav=/zsrd/knc/workofplan/tree.jsp"
+            url="/zsrd/knc/workofplan/index.jsp"
+            messageKey="zsrd-knc-workofplan:module.zsrd.knc.workofplan"/>
+
+    <quartz
+            messageKey="zsrd-knc-workofplan:module.zsrd.knc.workofplan"
+
+            jobService="zsrdKncWorkOfPlanService"
+
+            cronExpression="0 0 1 * * ?"
+
+            jobMethod="addSeal"/>
+
+
+</configs>

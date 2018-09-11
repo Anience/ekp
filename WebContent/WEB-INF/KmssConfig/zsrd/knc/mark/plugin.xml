@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin
+	xmlns="http://www.example.org/plugin-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/plugin-config ../../plugin.xsd ">
+
+	<extension point="com.landray.kmss.sys.webservice2">
+        <item name="registry">
+		    <param name="serviceName" value="评分接口" />
+			<param name="serviceClass" value="com.landray.kmss.zsrd.knc.mark.webservice.IMarkService" />
+			<param name="serviceBean" value="markService" />				
+			<param name="serviceDoc" value="/km/review/km_review_webservice/kmReviewWebServiceHelp.jsp" />
+	    </item>
+	</extension>
+	<extension point="com.landray.kmss.sys.webservice2">
+	    <item name="registry">
+		    <param name="serviceName" value="app登录接口" />
+			<param name="serviceClass" value="com.landray.kmss.zsrd.knc.app.webservice.IAppLoginService" />
+			<param name="serviceBean" value="appLoginService" />				
+			<param name="serviceDoc" value="/km/review/km_review_webservice/kmReviewWebServiceHelp.jsp" />
+	    </item>
+    </extension>
+	
+	
+</plugin>

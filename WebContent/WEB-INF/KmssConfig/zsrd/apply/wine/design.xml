@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs
+	xmlns="http://www.example.org/design-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/design-config ../../design.xsd ">
+
+	<module
+		messageKey="zsrd-apply-wine:module.zsrd.apply.wine"
+		urlPrefix="/zsrd/apply/wine/"
+		defaultValidator="roleValidator(role=ROLE_ZSRDAPPLYWINE_DEFAULT)">
+		<roles>
+			ROLE_ZSRDAPPLYWINE_DEFAULT
+		</roles>
+
+		<request
+			path="zsrd_apply_wine/zsrdApplyWine*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.zsrd.apply.wine.model.ZsrdApplyWine">
+		</request>
+
+		<request
+			path="zsrd_apply_wineMg/zsrdApplyWinemg*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.zsrd.apply.wine.model.ZsrdApplyWinemg">
+		</request>
+
+	</module>
+
+	<homePage
+		urlPrefix="zsrd/apply/wine"
+		config="/moduleindex_notopic.jsp?nav=/zsrd/apply/wine/tree.jsp"
+		url="/zsrd/apply/wine/index.jsp"
+		messageKey="zsrd-apply-wine:module.zsrd.apply.wine" />
+ 
+    <flowDef
+	    modelName="com.landray.kmss.zsrd.apply.wine.model.ZsrdApplyWine"
+	    templateModelName="com.landray.kmss.zsrd.apply.wine.model.ZsrdApplyWine"
+	    key="ZsrdApplyWineDoc"
+	    moduleMessageKey="zsrd-apply-vacate:module.zsrd.apply.wine"
+	    type="oa" />
+ 
+ 
+</configs>

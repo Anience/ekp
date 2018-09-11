@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+    <bean
+            id="zsrdKncFormCategoryDao"
+            parent="KmssAuthBaseDao"
+            class="com.landray.kmss.zsrd.knc.form.dao.hibernate.ZsrdKncFormCategoryDaoImp">
+        <property
+                name="modelName"
+                value="com.landray.kmss.zsrd.knc.form.model.ZsrdKncFormCategory"/>
+    </bean>
+
+    <bean
+            id="zsrdKncFormCategoryTarget"
+            parent="KmssBaseTarget"
+            class="com.landray.kmss.zsrd.knc.form.service.spring.ZsrdKncFormCategoryServiceImp">
+        <property
+                name="baseDao">
+            <ref
+                    local="zsrdKncFormCategoryDao"/>
+        </property>
+    </bean>
+    <bean
+            id="zsrdKncFormCategoryService"
+            parent="KmssBaseService">
+        <property
+                name="target">
+            <ref
+                    local="zsrdKncFormCategoryTarget"/>
+        </property>
+    </bean>
+
+
+    <bean
+            id="zsrdKncFormMainDao"
+            parent="KmssExtendDataAreaDao"
+            class="com.landray.kmss.zsrd.knc.form.dao.hibernate.ZsrdKncFormMainDaoImp">
+        <property
+                name="modelName"
+                value="com.landray.kmss.zsrd.knc.form.model.ZsrdKncFormMain"/>
+    </bean>
+
+    <bean
+            id="zsrdKncFormMainTarget"
+            parent="KmssExtendDataTarget"
+            class="com.landray.kmss.zsrd.knc.form.service.spring.ZsrdKncFormMainServiceImp">
+        <property
+                name="baseDao">
+            <ref
+                    local="zsrdKncFormMainDao"/>
+        </property>
+        <property
+                name="zsrdKncFormCategoryService">
+            <ref
+                    local="zsrdKncFormCategoryService"/>
+        </property>
+    </bean>
+    <bean
+            id="zsrdKncFormMainService"
+            parent="KmssBaseService">
+        <property
+                name="target">
+            <ref
+                    local="zsrdKncFormMainTarget"/>
+        </property>
+
+    </bean>
+
+</beans>

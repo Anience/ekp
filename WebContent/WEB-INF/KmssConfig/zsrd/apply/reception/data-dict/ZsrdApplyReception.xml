@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<models
+	xmlns="http://www.example.org/design-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/design-config ../../../data-dict.xsd ">
+	<model
+		modelName="com.landray.kmss.zsrd.apply.reception.model.ZsrdApplyReception"
+		messageKey="zsrd-apply-reception:table.zsrdApplyReception"
+		displayProperty="fdId"
+		serviceBean="zsrdApplyReceptionService"
+		table="zsrd_apply_reception"
+		url="/zsrd/apply/reception/zsrd_apply_reception/zsrdApplyReception.do?method=view&amp;fdId=${fdId}">
+
+		<idProperty>
+			<generator
+				type="assigned" />
+		</idProperty>
+
+		<simpleProperty
+			name="fdForeignDepartName"
+			messageKey="zsrd-apply-reception:zsrdApplyReception.fdForeignDepartName"
+			type="String"
+			column="fd_foreign_depart_name"
+			notNull="false"
+			length="300"
+			validate="false" />
+
+		<simpleProperty
+			name="docStatus"
+			messageKey="zsrd-apply-reception:zsrdApplyReception.docStatus"
+			type="String"
+			column="doc_status"
+			notNull="false"
+			length="2"
+			validate="false" />
+
+		<simpleProperty
+			name="docCreateTime"
+			messageKey="zsrd-apply-reception:zsrdApplyReception.docCreateTime"
+			type="DateTime"
+			column="doc_create_time"
+			notNull="false"
+			validate="false" />
+
+		<simpleProperty
+			name="fdReceptionNum"
+			messageKey="zsrd-apply-reception:zsrdApplyReception.fdReceptionNum"
+			type="Integer"
+			column="fd_reception__num"
+			notNull="false"
+			length="36"
+			validate="false" />
+
+		<simpleProperty
+			name="fdAccompanyNum"
+			messageKey="zsrd-apply-reception:zsrdApplyReception.fdAccompanyNum"
+			type="String"
+			column="fd_accompany_num"
+			notNull="false"
+			length="36"
+			validate="false" />
+
+		<simpleProperty
+			name="fdStd"
+			messageKey="zsrd-apply-reception:zsrdApplyReception.fdStd"
+			type="String"
+			column="fd_std"
+			notNull="false"
+			length="36"
+			validate="false" />
+
+		<simpleProperty
+			name="fdTotal"
+			messageKey="zsrd-apply-reception:zsrdApplyReception.fdTotal"
+			type="String"
+			column="fd_total"
+			notNull="false"
+			length="36"
+			validate="false" />
+
+		<simpleProperty
+			name="fdReceptionType"
+			messageKey="zsrd-apply-reception:zsrdApplyReception.fdReceptionType"
+			type="String"
+			column="fd_reception_type"
+			notNull="false"
+			length="36"
+			validate="false" />
+
+		<simpleProperty
+			name="fdReceptionTime"
+			messageKey="zsrd-apply-reception:zsrdApplyReception.fdReceptionTime"
+			type="DateTime"
+			column="fd_reception_time"
+			notNull="false"
+			validate="false" />
+			
+		<simpleProperty
+			name="docUseWine"
+			messageKey="zsrd-apply-reception:zsrdApplyReception.docUseWine"
+			type="String"
+			column="doc_usewine"
+			notNull="false"
+			length="36"
+			validate="false" />
+
+		<modelProperty
+			name="docCreator"
+			messageKey="zsrd-apply-reception:zsrdApplyReception.docCreator"
+			type="com.landray.kmss.sys.organization.model.SysOrgElement"
+			column="doc_creator_id"
+			notNull="false"
+			validate="false" />
+
+ 
+
+ 
+	</model>
+</models>

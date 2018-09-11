@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<models
+	xmlns="http://www.example.org/design-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/design-config ../../../data-dict.xsd ">
+	<model
+		modelName="com.landray.kmss.zsrd.apply.dynamic.model.ZsrdApplyDynamicCategory"
+		messageKey="zsrd-apply-dynamic:table.zsrdApplyDynamicCategory"
+		displayProperty="fdName"
+		serviceBean="zsrdApplyDynamicCategoryService"
+		table="zsrd_apply_dynamic_category"
+		url="/zsrd/apply/dynamic/zsrd_apply_dynamic_category/zsrdApplyDynamicCategory.do?method=view&amp;fdId=${fdId}">
+
+		<idProperty>
+			<generator
+				type="assigned" />
+		</idProperty>
+
+		<simpleProperty
+			name="fdName"
+			messageKey="zsrd-apply-dynamic:zsrdApplyDynamicCategory.fdName"
+			type="String"
+			column="fd_name"
+			notNull="true"
+			length="200"
+			validate="true" />
+
+		<simpleProperty
+			name="fdOrder"
+			messageKey="zsrd-apply-dynamic:zsrdApplyDynamicCategory.fdOrder"
+			type="Integer"
+			column="fd_order"
+			notNull="false"
+			length="10"
+			validate="true" />
+
+		<modelProperty
+			name="fdParent"
+			messageKey="zsrd-apply-dynamic:zsrdApplyDynamicCategory.fdParent"
+			type="com.landray.kmss.zsrd.apply.dynamic.model.ZsrdApplyDynamicCategory"
+			column="fd_parent"
+			notNull="false"
+			validate="false" />
+
+ 
+		<simpleProperty
+			name="docCreateTime"
+			messageKey="zsrd-apply-dynamic:zsrdApplyDynamicCategory.docCreateTime"
+			type="DateTime"
+			column="doc_create_time"
+			notNull="true"
+			unique="false" />
+		<simpleProperty
+			name="docAlterTime"
+			messageKey="zsrd-apply-dynamic:zsrdApplyDynamicCategory.docAlterTime"
+			type="DateTime"
+			column="doc_alter_time"
+			notNull="false"
+			unique="false" />
+		<modelProperty
+			name="docAlteror"
+			messageKey="zsrd-apply-dynamic:zsrdApplyDynamicCategory.docAlteror"
+			type="com.landray.kmss.sys.organization.model.SysOrgPerson"
+			column="doc_alteror_id"
+			notNull="false"
+			unique="false"
+			/>
+		<modelProperty
+			name="docCreator"
+			messageKey="zsrd-apply-dynamic:zsrdApplyDynamicCategory.docCreator"
+			type="com.landray.kmss.sys.organization.model.SysOrgPerson"
+			column="doc_creator_id"
+			notNull="true"
+			unique="false"
+			 />
+		<simpleProperty
+			name="fdHierarchyId"
+			messageKey="zsrd-apply-dynamic:zsrdApplyDynamicCategory.fdHierarchyId"
+			type="String"
+			column="fd_hierarchy_id"
+			notNull="false"
+			unique="false"
+			length="1000" />
+		<modelProperty
+			name="hbmParent"
+			messageKey="zsrd-apply-dynamic:zsrdApplyDynamicCategory.hbmParent"
+			type="com.landray.kmss.sys.news.model.SysNewsTemplate"
+			cascade="save-update"
+			column="fd_parent_id"
+			notNull="false"
+			unique="false"
+			/>
+		<simpleProperty
+			name="fdIsinheritMaintainer"
+			messageKey="zsrd-apply-dynamic:zsrdApplyDynamicCategory.fdIsinheritMaintainer"
+			type="Boolean"
+			column="fd_isinherit_maintainer"
+			notNull="false"
+			unique="false"
+			length="1" />
+		<simpleProperty
+			name="fdIsinheritUser"
+			messageKey="zsrd-apply-dynamic:zsrdApplyDynamicCategory.fdIsinheritUser"
+			type="Boolean"
+			column="fd_isinherit_user"
+			notNull="false"
+			unique="false"
+			length="1" />
+		<simpleProperty
+			name="authReaderFlag"
+			messageKey="zsrd-apply-dynamic:zsrdApplyDynamicCategory.authReaderFlag"
+			type="Boolean"
+			column="auth_reader_flag"
+			notNull="false"
+			unique="false"
+			canDisplay="false"
+			length="1" />
+		<simpleProperty
+			name="authNotReaderFlag"
+			messageKey="zsrd-apply-dynamic:zsrdApplyDynamicCategory.authNotReaderFlag"
+			type="Boolean"
+			column="auth_not_reader_flag"
+			notNull="false"
+			unique="false"
+			length="1" />
+		<listProperty
+			name="authOtherReaders"
+			messageKey="zsrd-apply-dynamic:zsrdApplyDynamicCategory.authOtherReaders"
+			column="fd_template_id"
+			type="com.landray.kmss.sys.organization.model.SysOrgElement"
+			elementColumn="auth_other_reader_id"
+			table="zsrd_apply_dynamic_category_oreader"
+			inverse="false"
+			canDisplay="false" />
+		<listProperty
+			name="authOtherEditors"
+			messageKey="zsrd-apply-dynamic:zsrdApplyDynamicCategory.authOtherEditors"
+			column="fd_template_id"
+			type="com.landray.kmss.sys.organization.model.SysOrgElement"
+			elementColumn="auth_other_editor_id"
+			table="zsrd_apply_dynamic_category_oeditor"
+			inverse="false"
+			canDisplay="false" />
+		<listProperty
+			name="authAllEditors"
+			messageKey="zsrd-apply-dynamic:zsrdApplyDynamicCategory.authAllEditors"
+			column="fd_tmp_id"
+			type="com.landray.kmss.sys.organization.model.SysOrgElement"
+			elementColumn="auth_all_editor_id"
+			table="zsrd_apply_dynamic_category_aeditor"
+			inverse="false"
+			canDisplay="false" />
+		<listProperty
+			name="authAllReaders"
+			messageKey="zsrd-apply-dynamic:zsrdApplyDynamicCategory.authAllReaders"
+			column="fd_template_id"
+			type="com.landray.kmss.sys.organization.model.SysOrgElement"
+			elementColumn="auth_all_reader_id"
+			table="zsrd_apply_dynamic_category_areader"
+			inverse="false"
+			canDisplay="false" />
+		<listProperty
+			name="authEditors"
+			messageKey="zsrd-apply-dynamic:zsrdApplyDynamicCategory.authEditors"
+			column="fd_template_id"
+			type="com.landray.kmss.sys.organization.model.SysOrgElement"
+			elementColumn="auth_editor_id"
+			table="zsrd_apply_dynamic_category_editor"
+			inverse="false"
+			 />
+		<listProperty
+			name="authReaders"
+			messageKey="zsrd-apply-dynamic:zsrdApplyDynamicCategory.authReaders"
+			column="fd_template_id"
+			type="com.landray.kmss.sys.organization.model.SysOrgElement"
+			elementColumn="auth_reader_id"
+			table="zsrd_apply_dynamic_category_reader"
+			inverse="false"
+			 />
+ 
+	</model>
+</models>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs
+	xmlns="http://www.example.org/design-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/design-config ../../design.xsd ">
+
+	<module
+		messageKey="zsrd-apply-evection:module.zsrd.apply.evection"
+		urlPrefix="/zsrd/apply/evection/"
+		defaultValidator="roleValidator(role=ROLE_ZSRDAPPLYEVECTION_DEFAULT)">
+		<roles>
+			ROLE_ZSRDAPPLYEVECTION_DEFAULT
+		</roles>
+
+		<request
+			path="zsrd_apply_evection/zsrdApplyEvection*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.zsrd.apply.evection.model.ZsrdApplyEvection">
+		</request>
+
+	</module>
+
+	<homePage
+		urlPrefix="zsrd/apply/evection"
+		config="/moduleindex_notopic.jsp?nav=/zsrd/apply/evection/tree.jsp"
+		url="/zsrd/apply/evection/index.jsp"
+		messageKey="zsrd-apply-evection:module.zsrd.apply.evection" />
+ 
+    <flowDef
+	    modelName="com.landray.kmss.zsrd.apply.evection.model.ZsrdApplyEvection"
+	    templateModelName="com.landray.kmss.zsrd.apply.evection.model.ZsrdApplyEvection"
+	    key="ZsrdApplyEvectionDoc"
+	    moduleMessageKey="zsrd-apply-evection:module.zsrd.apply.evection"
+	    type="oa" />
+    
+ 
+</configs>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	
+	<bean
+		id="zsrdKncFlowDao"
+		parent="KmssExtendDataAreaDao"
+		class="com.landray.kmss.zsrd.knc.risk.dao.hibernate.ZsrdKncFlowDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.zsrd.knc.risk.model.ZsrdKncFlow" />
+	</bean>
+
+	<bean
+		id="zsrdKncFlowTarget"
+		parent="KmssExtendDataTarget"
+		class="com.landray.kmss.zsrd.knc.risk.service.spring.ZsrdKncFlowServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="zsrdKncFlowDao" />
+		</property>
+	</bean>
+	<bean
+		id="zsrdKncFlowService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="zsrdKncFlowTarget" />
+		</property>
+	</bean>
+
+	
+	<bean
+		id="zsrdKncFlowLinkDao"
+		parent="KmssExtendDataAreaDao"
+		class="com.landray.kmss.zsrd.knc.risk.dao.hibernate.ZsrdKncFlowLinkDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.zsrd.knc.risk.model.ZsrdKncFlowLink" />
+	</bean>
+
+	<bean
+		id="zsrdKncFlowLinkTarget"
+		parent="KmssExtendDataTarget"
+		class="com.landray.kmss.zsrd.knc.risk.service.spring.ZsrdKncFlowLinkServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="zsrdKncFlowLinkDao" />
+		</property>
+	</bean>
+	<bean
+		id="zsrdKncFlowLinkService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="zsrdKncFlowLinkTarget" />
+		</property>
+	</bean>
+
+	
+	<bean
+		id="zsrdKncRiskCategoryDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.zsrd.knc.risk.dao.hibernate.ZsrdKncRiskCategoryDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.zsrd.knc.risk.model.ZsrdKncRiskCategory" />
+	</bean>
+
+	<bean
+		id="zsrdKncRiskCategoryTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.zsrd.knc.risk.service.spring.ZsrdKncRiskCategoryServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="zsrdKncRiskCategoryDao" />
+		</property>
+	</bean>
+	<bean
+		id="zsrdKncRiskCategoryService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="zsrdKncRiskCategoryTarget" />
+		</property>
+	</bean>
+
+	
+	<bean
+		id="zsrdKncBusinessTypeDao"
+		parent="KmssExtendDataAreaDao"
+		class="com.landray.kmss.zsrd.knc.risk.dao.hibernate.ZsrdKncBusinessTypeDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.zsrd.knc.risk.model.ZsrdKncBusinessType" />
+	</bean>
+
+	<bean
+		id="zsrdKncBusinessTypeTarget"
+		parent="KmssExtendDataTarget"
+		class="com.landray.kmss.zsrd.knc.risk.service.spring.ZsrdKncBusinessTypeServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="zsrdKncBusinessTypeDao" />
+		</property>
+	</bean>
+	<bean
+		id="zsrdKncBusinessTypeService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="zsrdKncBusinessTypeTarget" />
+		</property>
+	</bean>
+
+	
+	<bean
+		id="zsrdKncRiskMainDao"
+		parent="KmssExtendDataAreaDao"
+		class="com.landray.kmss.zsrd.knc.risk.dao.hibernate.ZsrdKncRiskMainDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.zsrd.knc.risk.model.ZsrdKncRiskMain" />
+	</bean>
+
+	<bean
+		id="zsrdKncRiskMainTarget"
+		parent="KmssExtendDataTarget"
+		class="com.landray.kmss.zsrd.knc.risk.service.spring.ZsrdKncRiskMainServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="zsrdKncRiskMainDao" />
+		</property>
+		<property
+			name="categoryService">
+			<ref
+				local="zsrdKncRiskCategoryService" />
+		</property>
+	</bean>
+	<bean
+		id="zsrdKncRiskMainService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="zsrdKncRiskMainTarget" />
+		</property>
+	</bean>
+
+</beans>

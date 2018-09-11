@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs
+	xmlns="http://www.example.org/design-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/design-config ../../design.xsd ">
+
+	<module
+		messageKey="zsrd-apply-car:module.zsrd.apply.car"
+		urlPrefix="/zsrd/apply/car/"
+		defaultValidator="roleValidator(role=ROLE_ZSRDAPPLYCAR_DEFAULT)">
+		<roles>
+			ROLE_ZSRDAPPLYCAR_DEFAULT
+		</roles>
+
+		<request
+			path="zsrd_apply_car/zsrdApplyCar*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.zsrd.apply.car.model.ZsrdApplyCar">
+		</request>
+
+	</module>
+
+	<homePage
+		urlPrefix="zsrd/apply/car"
+		config="/moduleindex_notopic.jsp?nav=/zsrd/apply/car/tree.jsp"
+		url="/zsrd/apply/car/index.jsp"
+		messageKey="zsrd-apply-car:module.zsrd.apply.car" />
+	
+	<flowDef
+	    modelName="com.landray.kmss.zsrd.apply.car.model.ZsrdApplyCar"
+	    templateModelName="com.landray.kmss.zsrd.apply.car.model.ZsrdApplyCar"
+	    key="ZsrdApplyCarDoc"
+	    moduleMessageKey="zsrd-apply-car:module.zsrd.apply.car"
+	    type="oa" />
+
+ 
+</configs>

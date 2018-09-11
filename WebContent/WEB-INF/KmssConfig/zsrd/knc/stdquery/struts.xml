@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+<struts-config>
+	<!-- 表单 Bean -->
+	<form-beans>
+		<form-bean
+			name="zsrdKncStdQueryCategoryForm"
+			type="com.landray.kmss.zsrd.knc.stdquery.forms.ZsrdKncStdQueryCategoryForm" />
+		<form-bean
+			name="zsrdKncStdQueryDetailForm"
+			type="com.landray.kmss.zsrd.knc.stdquery.forms.ZsrdKncStdQueryDetailForm" />
+		<form-bean
+				name="zsrdKncStdQueryProgramForm"
+				type="com.landray.kmss.zsrd.knc.stdquery.forms.ZsrdKncStdQueryProgramForm" />
+	</form-beans>
+
+	<!-- 操作映射 -->
+    <action-mappings>
+        <action
+                path="/zsrd/knc/stdquery/zsrd_knc_std_query_detail/zsrdKncStdQueryDetailIndex"
+                type="com.landray.kmss.zsrd.knc.stdquery.actions.ZsrdKncStdQueryDetailIndexAction"
+                parameter="method"
+                name="zsrdKncStdQueryDetailForm"
+                input="edit">
+            <forward
+                    name="listChildren"
+                    path="/zsrd/knc/stdquery/zsrd_knc_std_query_detail/zsrdKncStdQueryDetail_data.jsp">
+            </forward>
+            <forward
+                    name="data"
+                    path="/zsrd/knc/stdquery/zsrd_knc_std_query_detail/zsrdKncStdQueryDetail_data.jsp">
+            </forward>
+            <forward
+                    name="listChildren.4m"
+                    path="/zsrd/knc/stdquery/zsrd_knc_std_query_detail/mobile/list.jsp">
+            </forward>
+        </action>
+		<action
+			path="/zsrd/knc/stdquery/zsrd_knc_std_query_category/zsrdKncStdQueryCategory"
+			type="com.landray.kmss.zsrd.knc.stdquery.actions.ZsrdKncStdQueryCategoryAction"
+			name="zsrdKncStdQueryCategoryForm"
+			parameter="method"
+			input="edit"
+			unknown="false"
+			validate="true"
+			scope="request">
+			<forward
+				name="view"
+				path="/zsrd/knc/stdquery/zsrd_knc_std_query_category/zsrdKncStdQueryCategory_view.jsp" />
+			<forward
+				name="edit"
+				path="/zsrd/knc/stdquery/zsrd_knc_std_query_category/zsrdKncStdQueryCategory_edit.jsp" />
+			<forward
+				name="list"
+				path="/zsrd/knc/stdquery/zsrd_knc_std_query_category/zsrdKncStdQueryCategory_list.jsp" />
+		</action>
+
+		<action
+			path="/zsrd/knc/stdquery/zsrd_knc_std_query_detail/zsrdKncStdQueryDetail"
+			type="com.landray.kmss.zsrd.knc.stdquery.actions.ZsrdKncStdQueryDetailAction"
+			name="zsrdKncStdQueryDetailForm"
+			parameter="method"
+			input="edit"
+			unknown="false"
+			validate="true"
+			scope="request">
+			<forward
+				name="view"
+				path="/zsrd/knc/stdquery/zsrd_knc_std_query_detail/zsrdKncStdQueryDetail_view.jsp" />
+			<forward
+				name="edit"
+				path="/zsrd/knc/stdquery/zsrd_knc_std_query_detail/zsrdKncStdQueryDetail_edit.jsp" />
+			<forward
+				name="list"
+				path="/zsrd/knc/stdquery/zsrd_knc_std_query_detail/zsrdKncStdQueryDetail_list.jsp" />
+		</action>
+
+		<action
+				path="/zsrd/knc/stdquery/zsrd_knc_std_query_program/zsrdKncStdQueryProgram"
+				type="com.landray.kmss.zsrd.knc.stdquery.actions.ZsrdKncStdQueryProgramAction"
+				name="zsrdKncStdQueryProgramForm"
+				parameter="method"
+				input="edit"
+				unknown="false"
+				validate="true"
+				scope="request">
+			<forward
+					name="view"
+					path="/zsrd/knc/stdquery/zsrd_knc_std_query_program/zsrdKncStdQueryProgram_view.jsp" />
+			<forward
+					name="edit"
+					path="/zsrd/knc/stdquery/zsrd_knc_std_query_program/zsrdKncStdQueryProgram_edit.jsp" />
+			<forward
+					name="list"
+					path="/zsrd/knc/stdquery/zsrd_knc_std_query_program/zsrdKncStdQueryProgram_list.jsp" />
+		</action>
+
+	</action-mappings>
+	<!-- 消息资源 -->
+	<message-resources
+		parameter="com.landray.kmss.zsrd.knc.stdquery.ApplicationResources"
+		key="zsrd-knc-stdquery" />
+</struts-config>

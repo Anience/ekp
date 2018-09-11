@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://www.example.org/plugin-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/plugin-config ../../plugin.xsd ">
+		<extension point="com.landray.kmss.sys.mobile.config">
+		<item name="info">
+			<param name="name" value="{zsrd-knc-risk:table.zsrdKncFlow}" />
+			<param name="modelName" value="com.landray.kmss.zsrd.knc.risk.model.ZsrdKncFlow" />
+		</item>
+	</extension>
+	<extension point="com.landray.kmss.sys.mobile.config">
+		<item name="info">
+			<param name="name" value="{zsrd-knc-risk:table.zsrdKncFlowLink}" />
+			<param name="modelName" value="com.landray.kmss.zsrd.knc.risk.model.ZsrdKncFlowLink" />
+		</item>
+	</extension>
+	<extension point="com.landray.kmss.sys.mobile.config">
+		<item name="info">
+			<param name="name" value="{zsrd-knc-risk:table.zsrdKncRiskCategory}" />
+			<param name="modelName" value="com.landray.kmss.zsrd.knc.risk.model.ZsrdKncRiskCategory" />
+		</item>
+	</extension>
+	<extension point="com.landray.kmss.sys.mobile.config">
+		<item name="info">
+			<param name="name" value="{zsrd-knc-risk:table.zsrdKncBusinessType}" />
+			<param name="modelName" value="com.landray.kmss.zsrd.knc.risk.model.ZsrdKncBusinessType" />
+		</item>
+	</extension>
+	<extension point="com.landray.kmss.sys.mobile.config">
+		<item name="info">
+			<param name="name" value="{zsrd-knc-risk:table.zsrdKncRiskMain}" />
+			<param name="modelName" value="com.landray.kmss.zsrd.knc.risk.model.ZsrdKncRiskMain" />
+		</item>
+	</extension>
+</plugin>

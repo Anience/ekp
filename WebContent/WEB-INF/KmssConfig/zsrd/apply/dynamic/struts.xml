@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+<struts-config>
+	<!-- 表单 Bean -->
+	<form-beans>
+		<form-bean
+			name="zsrdApplyDynamicCategoryForm"
+			type="com.landray.kmss.zsrd.apply.dynamic.forms.ZsrdApplyDynamicCategoryForm" />
+		<form-bean
+			name="zsrdApplyDynamicForm"
+			type="com.landray.kmss.zsrd.apply.dynamic.forms.ZsrdApplyDynamicForm" />
+	</form-beans>
+
+
+	<!-- 操作映射 -->
+	<action-mappings>
+		<action
+				path="/zsrd/apply/dynamic/zsrd_apply_dynamic/zsrdApplyDynamicIndex"
+				type="com.landray.kmss.zsrd.apply.dynamic.actions.ZsrdApplyDynamicIndexAction"
+				parameter="method"
+				name="zsrdApplyDynamicForm"
+				input="edit">
+			<forward
+					name="listChildren"
+					path="/zsrd/apply/dynamic/zsrd_apply_dynamic/zsrdApplyDynamic_data.jsp">
+			</forward>
+			<forward
+					name="data"
+					path="/zsrd/apply/dynamic/zsrd_apply_dynamic/zsrdApplyDynamic_data.jsp">
+			</forward>
+			<forward
+					name="listChildren.4m"
+					path="/zsrd/apply/dynamic/zsrd_apply_dynamic/mobile/list.jsp">
+			</forward>
+		</action>
+
+		<action
+			path="/zsrd/apply/dynamic/zsrd_apply_dynamic_category/zsrdApplyDynamicCategory"
+			type="com.landray.kmss.zsrd.apply.dynamic.actions.ZsrdApplyDynamicCategoryAction"
+			name="zsrdApplyDynamicCategoryForm"
+			parameter="method"
+			input="edit"
+			unknown="false"
+			validate="true"
+			scope="request">
+			<forward
+				name="view"
+				path="/zsrd/apply/dynamic/zsrd_apply_dynamic_category/zsrdApplyDynamicCategory_view.jsp" />
+			<forward
+				name="edit"
+				path="/zsrd/apply/dynamic/zsrd_apply_dynamic_category/zsrdApplyDynamicCategory_edit.jsp" />
+			<forward
+				name="list"
+				path="/zsrd/apply/dynamic/zsrd_apply_dynamic_category/zsrdApplyDynamicCategory_list.jsp" />
+		</action>
+
+		<action
+			path="/zsrd/apply/dynamic/zsrd_apply_dynamic/zsrdApplyDynamic"
+			type="com.landray.kmss.zsrd.apply.dynamic.actions.ZsrdApplyDynamicAction"
+			name="zsrdApplyDynamicForm"
+			parameter="method"
+			input="edit"
+			unknown="false"
+			validate="true"
+			scope="request">
+			<forward
+				name="view"
+				path="/zsrd/apply/dynamic/zsrd_apply_dynamic/zsrdApplyDynamic_view.jsp" />
+			<forward
+				name="view.4m"
+				path="/zsrd/apply/dynamic/zsrd_apply_dynamic/mobile/view.jsp" />
+			<forward
+				name="edit"
+				path="/zsrd/apply/dynamic/zsrd_apply_dynamic/zsrdApplyDynamic_edit.jsp" />
+			<forward
+				name="data"
+				path="/zsrd/apply/dynamic/zsrd_apply_dynamic/zsrdApplyDynamic_data.jsp" />
+			<forward
+				name="data.4m"
+				path="/zsrd/apply/dynamic/zsrd_apply_dynamic/mobile/list.jsp" />
+			<forward
+					name="dynamic"
+					path="/zsrd/apply/dynamic/zsrd_apply_dynamic/dynamic.jsp" />
+			<forward
+					name="null"
+					path="/zsrd/apply/dynamic/zsrd_apply_dynamic/null.jsp" />
+		</action>
+
+
+	</action-mappings>
+	<!-- 消息资源 -->
+	<message-resources
+		parameter="com.landray.kmss.zsrd.apply.dynamic.ApplicationResources"
+		key="zsrd-apply-dynamic" />
+</struts-config>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	
+	<bean
+		id="zsrdApplyReceptionDao"
+		parent="KmssExtendDataAreaDao"
+		class="com.landray.kmss.zsrd.apply.reception.dao.hibernate.ZsrdApplyReceptionDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.zsrd.apply.reception.model.ZsrdApplyReception" />
+	</bean>
+
+	<bean
+		id="zsrdApplyReceptionTarget"
+		parent="KmssExtendDataTarget"
+		class="com.landray.kmss.zsrd.apply.reception.service.spring.ZsrdApplyReceptionServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="zsrdApplyReceptionDao" />
+		</property>
+		<property
+			name="zsrdApplyReceptionDao">
+			<ref
+				local="zsrdApplyReceptionDao" />
+		</property>
+	</bean>
+	<bean
+		id="zsrdApplyReceptionService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="zsrdApplyReceptionTarget" />
+		</property>
+	</bean>
+
+
+	
+	<bean
+		id="zsrdApplyReceptionmgDao"
+		parent="KmssExtendDataAreaDao"
+		class="com.landray.kmss.zsrd.apply.reception.dao.hibernate.ZsrdApplyReceptionmgDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.zsrd.apply.reception.model.ZsrdApplyReceptionemg" />
+	</bean>
+
+	<bean
+		id="zsrdApplyReceptionmgTarget"
+		parent="KmssExtendDataTarget"
+		class="com.landray.kmss.zsrd.apply.reception.service.spring.ZsrdApplyReceptionmgServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="zsrdApplyReceptionmgDao" />
+		</property>
+	</bean>
+	<bean
+		id="zsrdApplyReceptionmgService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="zsrdApplyReceptionmgTarget" />
+		</property>
+	</bean>
+
+
+</beans>

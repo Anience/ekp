@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs
+	xmlns="http://www.example.org/design-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/design-config ../../design.xsd ">
+
+	<module
+		messageKey="zsrd-apply-reception:module.zsrd.apply.reception"
+		urlPrefix="/zsrd/apply/reception/"
+		defaultValidator="roleValidator(role=ROLE_ZSRDAPPLYRECEPTION_DEFAULT)">
+		<roles>
+			ROLE_ZSRDAPPLYRECEPTION_DEFAULT;
+			ROLE_ZSRDAPPLYRECEPTION_ADD;
+			ROLE_ZSRDAPPLYRECEPTION_DELETE;
+			ROLE_ZSRDAPPLYRECEPTION_EDIT;
+			ROLE_ZSRDAPPLYRECEPTION_VIEW;
+		</roles>
+		
+		<request
+			path="zsrd_apply_reception/zsrdApplyReception*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.zsrd.apply.reception.model.ZsrdApplyReception">
+		    <query 
+		         queryString = "method=edit"
+		         validator = "roleValidator(role=ROLE_ZSRDAPPLYRECEPTION_EDIT)"/>
+		    <query 
+		         queryString = "method=delete"
+		         validator = "roleValidator(role=ROLE_ZSRDAPPLYRECEPTION_DELETE)"/>
+		     <query 
+		         queryString = "method=add"
+		         validator = "roleValidator(role=ROLE_ZSRDAPPLYRECEPTION_ADD)"/>
+		     <query 
+		         queryString = "method=view"
+		         validator = "roleValidator(role=ROLE_ZSRDAPPLYRECEPTION_VIEW)"/>		
+		</request>
+
+		<request
+			path="zsrd_apply_reception/zsrdApplyReception*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.zsrd.apply.reception.model.ZsrdApplyReception">
+		</request>
+		
+		<request
+			path="zsrd_apply_receptionmg/zsrdApplyReceptionmg*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.zsrd.apply.reception.model.ZsrdApplyReceptionmg">
+		</request>
+
+	</module>
+
+	<homePage
+		urlPrefix="zsrd/apply/reception"
+		config="/moduleindex_notopic.jsp?nav=/zsrd/apply/reception/tree.jsp"
+		url="/zsrd/apply/reception/index.jsp"
+		messageKey="zsrd-apply-reception:module.zsrd.apply.reception" />
+		
+   <flowDef
+	    modelName="com.landray.kmss.zsrd.apply.reception.model.ZsrdApplyReception"
+	    templateModelName="com.landray.kmss.zsrd.apply.reception.model.ZsrdApplyReception"
+	    key="ZsrdApplyReceptionDoc"
+	    moduleMessageKey="zsrd-apply-reception:module.zsrd.apply.reception"
+	    type="oa" />
+
+ 
+</configs>

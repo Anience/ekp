@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin
+	xmlns="http://www.example.org/plugin-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/plugin-config ../../plugin.xsd ">
+
+	<extension point="com.landray.kmss.sys.webservice2">
+        <item name="registry">
+		    <param name="serviceName" value="综合查询接口" />
+			<param name="serviceClass" value="com.landray.kmss.zsrd.knc.stdquery.webservice.IStdQueryService" />
+			<param name="serviceBean" value="stdQueryService" />				
+			<param name="serviceDoc" value="/km/review/km_review_webservice/kmReviewWebServiceHelp.jsp" />
+	    </item>
+    </extension>
+	
+	
+</plugin>

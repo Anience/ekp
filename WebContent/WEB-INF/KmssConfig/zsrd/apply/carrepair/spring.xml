@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	
+	<bean
+		id="zsrdApplyCarrepairDao"
+		parent="KmssExtendDataAreaDao"
+		class="com.landray.kmss.zsrd.apply.carrepair.dao.hibernate.ZsrdApplyCarrepairDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.zsrd.apply.carrepair.model.ZsrdApplyCarrepair" />
+	</bean>
+
+	<bean
+		id="zsrdApplyCarrepairTarget"
+		parent="KmssExtendDataTarget"
+		class="com.landray.kmss.zsrd.apply.carrepair.service.spring.ZsrdApplyCarrepairServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="zsrdApplyCarrepairDao" />
+		</property>
+		<property
+			name="zsrdApplyCarrepairDao">
+			<ref
+				local="zsrdApplyCarrepairDao" />
+		</property>
+	</bean>
+	<bean
+		id="zsrdApplyCarrepairService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="zsrdApplyCarrepairTarget" />
+		</property>
+	</bean>
+
+	
+	<bean
+		id="zsrdApplyCarproDao"
+		parent="KmssExtendDataAreaDao"
+		class="com.landray.kmss.zsrd.apply.carrepair.dao.hibernate.ZsrdApplyCarproDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.zsrd.apply.carrepair.model.ZsrdApplyCarpro" />
+	</bean>
+
+	<bean
+		id="zsrdApplyCarproTarget"
+		parent="KmssExtendDataTarget"
+		class="com.landray.kmss.zsrd.apply.carrepair.service.spring.ZsrdApplyCarproServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="zsrdApplyCarproDao" />
+		</property>
+	</bean>
+	<bean
+		id="zsrdApplyCarproService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="zsrdApplyCarproTarget" />
+		</property>
+	</bean>
+
+</beans>

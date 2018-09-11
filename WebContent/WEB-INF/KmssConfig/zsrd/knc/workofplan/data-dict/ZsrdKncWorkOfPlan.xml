@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<models
+	xmlns="http://www.example.org/design-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/design-config ../../../data-dict.xsd ">
+	<model
+		modelName="com.landray.kmss.zsrd.knc.workofplan.model.ZsrdKncWorkOfPlan"
+		messageKey="zsrd-knc-workofplan:table.zsrdKncWorkOfPlan"
+		displayProperty="fdId"
+		serviceBean="zsrdKncWorkOfPlanService"
+		table="zsrd_knc_work_of_plan"
+		url="/zsrd/knc/workofplan/zsrd_knc_work_of_plan/zsrdKncWorkOfPlan.do?method=view&amp;fdId=${fdId}">
+
+		<idProperty>
+			<generator
+				type="assigned" />
+		</idProperty>
+
+		<simpleProperty
+			name="fdWorkName"
+			messageKey="zsrd-knc-workofplan:zsrdKncWorkOfPlan.fdWorkName"
+			type="String"
+			column="fd_work_name"
+			notNull="false"
+			length="100"
+			validate="false" />
+
+		<simpleProperty
+			name="fdTime"
+			messageKey="zsrd-knc-workofplan:zsrdKncWorkOfPlan.fdTime"
+			type="DateTime"
+			column="fd_time"
+			notNull="false"
+			validate="false" />
+
+		<simpleProperty
+			name="fdCycle"
+			messageKey="zsrd-knc-workofplan:zsrdKncWorkOfPlan.fdCycle"
+			type="String"
+			column="fd_cycle"
+			notNull="false"
+			length="36"
+			validate="false" />
+
+		<modelProperty
+			name="fdPerson"
+			messageKey="zsrd-knc-workofplan:zsrdKncWorkOfPlan.fdPerson"
+			type="com.landray.kmss.common.model.SysOrgElement"
+			column="fd_person"
+			notNull="false"
+			validate="false" />
+
+ 
+
+ 
+	</model>
+</models>

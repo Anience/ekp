@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<models
+	xmlns="http://www.example.org/design-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/design-config ../../../data-dict.xsd ">
+	<model
+		modelName="com.landray.kmss.zsrd.knc.flow.model.ZsrdKncFlowCategory"
+		messageKey="zsrd-knc-flow:table.zsrdKncFlowCategory"
+		displayProperty="fdName"
+		serviceBean="zsrdKncFlowCategoryService"
+		table="zsrd_knc_flow_category"
+		url="/zsrd/knc/flow/zsrd_knc_flow_category/zsrdKncFlowCategory.do?method=view&amp;fdId=${fdId}">
+
+		<idProperty>
+			<generator
+				type="assigned" />
+		</idProperty>
+
+		<simpleProperty
+			name="fdName"
+			messageKey="zsrd-knc-flow:zsrdKncFlowCategory.fdName"
+			type="String"
+			column="fd_name"
+			notNull="true"
+			length="200"
+			validate="true" />
+
+		<simpleProperty
+			name="fdOrder"
+			messageKey="zsrd-knc-flow:zsrdKncFlowCategory.fdOrder"
+			type="Integer"
+			column="fd_order"
+			notNull="false"
+			length="10"
+			validate="true" />
+
+		<simpleProperty
+			name="docCreateTime"
+			messageKey="zsrd-knc-flow:zsrdKncFlowCategory.docCreateTime"
+			type="DateTime"
+			column="doc_create_time"
+			notNull="false"
+			validate="false" />
+
+		<simpleProperty
+			name="fdHierarchyId"
+			messageKey="zsrd-knc-flow:zsrdKncFlowCategory.fdHierarchyId"
+			type="String"
+			column="fd_hierarchy_id"
+			notNull="false"
+			length="900"
+			validate="false" />
+
+		<modelProperty
+			name="fdParent"
+			messageKey="zsrd-knc-flow:zsrdKncFlowCategory.fdParent"
+			type="com.landray.kmss.zsrd.knc.flow.model.ZsrdKncFlowCategory"
+			column="fd_parent_id"
+			notNull="false"
+			validate="false" />
+
+		<modelProperty
+			name="docCreator"
+			messageKey="zsrd-knc-flow:zsrdKncFlowCategory.docCreator"
+			type="com.landray.kmss.sys.organization.model.SysOrgElement"
+			column="doc_creator_id"
+			notNull="false"
+			validate="false" />
+
+ 
+
+ 
+	</model>
+</models>

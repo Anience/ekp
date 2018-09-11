@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<models
+	xmlns="http://www.example.org/design-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/design-config ../../../data-dict.xsd ">
+	<model
+		modelName="com.landray.kmss.zsrd.knc.mark.model.ZsrdKncMarkMain"
+		messageKey="zsrd-knc-mark:table.zsrdKncMarkMain"
+		displayProperty="fdId"
+		serviceBean="zsrdKncMarkMainService"
+		table="zsrd_knc_mark_main"
+		url="/zsrd/knc/mark/zsrd_knc_mark_main/zsrdKncMarkMain.do?method=view&amp;fdId=${fdId}">
+
+		<idProperty>
+			<generator
+				type="assigned" />
+		</idProperty>
+
+		<simpleProperty
+			name="fdBillName"
+			messageKey="zsrd-knc-mark:zsrdKncMarkMain.fdBillName"
+			type="String"
+			column="fd_bill_name"
+			notNull="false"
+			length="200"
+			validate="false" />
+
+		<simpleProperty
+			name="fdFlowDes"
+			messageKey="zsrd-knc-mark:zsrdKncMarkMain.fdFlowDes"
+			type="String"
+			column="fd_flow_des"
+			notNull="false"
+			length="800"
+			validate="false" />
+
+		<simpleProperty
+			name="fdFlowName"
+			messageKey="zsrd-knc-mark:zsrdKncMarkMain.fdFlowName"
+			type="String"
+			column="fd_flow_name"
+			notNull="false"
+			length="36"
+			validate="false" />
+
+		<simpleProperty
+			name="fdUrl"
+			messageKey="zsrd-knc-mark:zsrdKncMarkMain.fdUrl"
+			type="String"
+			column="fd_url"
+			notNull="false"
+			length="500"
+			validate="false" />
+
+		<simpleProperty
+			name="fdSource"
+			messageKey="zsrd-knc-mark:zsrdKncMarkMain.fdSource"
+			type="String"
+			column="fd_source"
+			notNull="false"
+			length="100"
+			validate="false" />
+
+		<simpleProperty
+			name="fdRemark"
+			messageKey="zsrd-knc-mark:zsrdKncMarkMain.fdRemark"
+			type="String"
+			column="fd_remark"
+			notNull="false"
+			length="1000"
+			validate="false" />
+
+		<simpleProperty
+			name="fdCreatorId"
+			messageKey="zsrd-knc-mark:zsrdKncMarkMain.fdCreatorId"
+			type="String"
+			column="fd_creator_id"
+			notNull="false"
+			length="36"
+			validate="false" />
+
+		<simpleProperty
+			name="fdCreatorName"
+			messageKey="zsrd-knc-mark:zsrdKncMarkMain.fdCreatorName"
+			type="String"
+			column="fd_creator_name"
+			notNull="false"
+			length="36"
+			validate="false" />
+
+ 
+
+ 
+	</model>
+</models>

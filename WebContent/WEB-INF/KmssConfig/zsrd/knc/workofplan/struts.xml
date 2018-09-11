@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+<struts-config>
+	<!-- 表单 Bean -->
+	<form-beans>
+		<form-bean
+			name="zsrdKncWorkOfPlanForm"
+			type="com.landray.kmss.zsrd.knc.workofplan.forms.ZsrdKncWorkOfPlanForm" />
+	</form-beans>
+
+	<!-- 操作映射 -->
+	<action-mappings>
+		<action
+			path="/zsrd/knc/workofplan/zsrd_knc_work_of_plan/zsrdKncWorkOfPlan"
+			type="com.landray.kmss.zsrd.knc.workofplan.actions.ZsrdKncWorkOfPlanAction"
+			name="zsrdKncWorkOfPlanForm"
+			parameter="method"
+			input="edit"
+			unknown="false"
+			validate="true"
+			scope="request">
+			<forward
+				name="view"
+				path="/zsrd/knc/workofplan/zsrd_knc_work_of_plan/zsrdKncWorkOfPlan_view.jsp" />
+			<forward
+				name="view.4m"
+				path="/zsrd/knc/workofplan/zsrd_knc_work_of_plan/mobile/view.jsp" />
+			<forward
+				name="edit"
+				path="/zsrd/knc/workofplan/zsrd_knc_work_of_plan/zsrdKncWorkOfPlan_edit.jsp" />
+			<forward
+				name="data"
+				path="/zsrd/knc/workofplan/zsrd_knc_work_of_plan/zsrdKncWorkOfPlan_data.jsp" />
+			<forward
+				name="list"
+				path="/zsrd/knc/workofplan/zsrd_knc_work_of_plan/zsrdKncWorkOfPlan_list.jsp" />
+			<forward
+				name="lists"
+				path="/zsrd/knc/workofplan/workOfPlan_list.jsp" />
+			<forward
+				name="null"
+				path="/zsrd/knc/workofplan/workOfPlan_null.jsp" />
+			<forward
+				name="data.4m"
+				path="/zsrd/knc/workofplan/zsrd_knc_work_of_plan/mobile/list.jsp" />
+		</action>
+
+
+	</action-mappings>
+	<!-- 消息资源 -->
+	<message-resources
+		parameter="com.landray.kmss.zsrd.knc.workofplan.ApplicationResources"
+		key="zsrd-knc-workofplan" />
+</struts-config>

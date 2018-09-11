@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs
+	xmlns="http://www.example.org/design-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/design-config ../../design.xsd ">
+
+	<module
+		messageKey="zsrd-knc-risk:module.zsrd.knc.risk"
+		urlPrefix="/zsrd/knc/risk/"
+		defaultValidator="roleValidator(role=ROLE_ZSRDKNCRISK_DEFAULT)">
+		<roles>
+			ROLE_ZSRDKNCRISK_DEFAULT;
+			ROLE_ZSRDKNCRISK_ADD;
+			ROLE_ZSRDKNCRISK_DELETE;
+			ROLE_ZSRDKNCRISK_EDIT;
+			ROLE_ZSRDKNCRISK_VIEW;
+		</roles>
+
+		<request
+			path="zsrd_knc_flow/zsrdKncFlow*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.zsrd.knc.risk.model.ZsrdKncFlow">
+		    <query 
+		         queryString = "method=edit"
+		         validator = "roleValidator(role=ROLE_ZSRDKNCRISK_EDIT)"/>
+		    <query 
+		         queryString = "method=delete"
+		         validator = "roleValidator(role=ROLE_ZSRDKNCRISK_DELETE)"/>
+		     <query 
+		         queryString = "method=add"
+		         validator = "roleValidator(role=ROLE_ZSRDKNCRISK_ADD)"/>
+		     <query 
+		         queryString = "method=view"
+		         validator = "roleValidator(role=ROLE_ZSRDKNCRISK_VIEW)"/>			
+		</request>
+
+		<request
+			path="zsrd_knc_flow_link/zsrdKncFlowLink*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.zsrd.knc.risk.model.ZsrdKncFlowLink">
+		</request>
+
+		<request
+			path="zsrd_knc_risk_category/zsrdKncRiskCategory*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.zsrd.knc.risk.model.ZsrdKncRiskCategory">
+		</request>
+
+		<request
+			path="zsrd_knc_business_type/zsrdKncBusinessType*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.zsrd.knc.risk.model.ZsrdKncBusinessType">
+		</request>
+
+		<request
+			path="zsrd_knc_risk_main/zsrdKncRiskMain*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.zsrd.knc.risk.model.ZsrdKncRiskMain">
+		</request>
+
+	</module>
+
+	<homePage
+		urlPrefix="zsrd/knc/risk"
+		config="/moduleindex_notopic.jsp?nav=/zsrd/knc/risk/tree.jsp"
+		url="/zsrd/knc/risk/index.jsp"
+		messageKey="zsrd-knc-risk:module.zsrd.knc.risk" />
+ 
+ 	<flowDef
+		modelName="com.landray.kmss.zsrd.knc.risk.model.ZsrdKncRiskMain"
+		templateModelName="com.landray.kmss.zsrd.knc.risk.model.ZsrdKncRiskCategory"
+		key="zsrdKncRiskMainDoc"
+		templatePropertyName="docCategoryId"
+		moduleMessageKey="zsrd-knc-risk:module.zsrd.knc.risk"
+		type="oa" />
+
+ 
+</configs>

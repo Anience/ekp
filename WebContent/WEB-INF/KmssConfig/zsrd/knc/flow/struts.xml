@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+        "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+<struts-config>
+    <!-- 表单 Bean -->
+    <form-beans>
+        <form-bean
+                name="zsrdKncFlowCategoryForm"
+                type="com.landray.kmss.zsrd.knc.flow.forms.ZsrdKncFlowCategoryForm"/>
+        <form-bean
+                name="zsrdKncFlowMainForm"
+                type="com.landray.kmss.zsrd.knc.flow.forms.ZsrdKncFlowMainForm"/>
+    </form-beans>
+
+    <!-- 操作映射 -->
+    <action-mappings>
+        <action
+                path="/zsrd/knc/flow/zsrd_knc_flow_main/zsrdKncFlowMainIndex"
+                type="com.landray.kmss.zsrd.knc.flow.actions.ZsrdKncFlowMainIndexAction"
+                parameter="method"
+                name="zsrdKncFlowMainForm"
+                input="edit">
+            <forward
+                    name="listChildren"
+                    path="/zsrd/knc/flow/zsrd_knc_flow_main/zsrdKncFlowMain_list.jsp">
+            </forward>
+            <forward
+                    name="listChildren.4m"
+                    path="/zsrd/knc/flow/zsrd_knc_flow_main/mobile/list.jsp">
+            </forward>
+        </action>
+        <action
+                path="/zsrd/knc/flow/zsrd_knc_flow_category/zsrdKncFlowCategory"
+                type="com.landray.kmss.zsrd.knc.flow.actions.ZsrdKncFlowCategoryAction"
+                name="zsrdKncFlowCategoryForm"
+                parameter="method"
+                input="edit"
+                unknown="false"
+                validate="true"
+                scope="request">
+            <forward
+                    name="view"
+                    path="/zsrd/knc/flow/zsrd_knc_flow_category/zsrdKncFlowCategory_view.jsp"/>
+            <forward
+                    name="edit"
+                    path="/zsrd/knc/flow/zsrd_knc_flow_category/zsrdKncFlowCategory_edit.jsp"/>
+            <forward
+                    name="list"
+                    path="/zsrd/knc/flow/zsrd_knc_flow_category/zsrdKncFlowCategory_list.jsp"/>
+        </action>
+
+        <action
+                path="/zsrd/knc/flow/zsrd_knc_flow_main/zsrdKncFlowMain"
+                type="com.landray.kmss.zsrd.knc.flow.actions.ZsrdKncFlowMainAction"
+                name="zsrdKncFlowMainForm"
+                parameter="method"
+                input="edit"
+                unknown="false"
+                validate="true"
+                scope="request">
+            <forward
+                    name="view"
+                    path="/zsrd/knc/flow/zsrd_knc_flow_main/zsrdKncFlowMain_view.jsp"/>
+            <forward
+                    name="view.4m"
+                    path="/zsrd/knc/flow/zsrd_knc_flow_main/mobile/view.jsp"/>
+            <forward
+                    name="edit"
+                    path="/zsrd/knc/flow/zsrd_knc_flow_main/zsrdKncFlowMain_edit.jsp"/>
+            <forward
+                    name="data"
+                    path="/zsrd/knc/flow/zsrd_knc_flow_main/zsrdKncFlowMain_data.jsp"/>
+            <forward
+                    name="data.4m"
+                    path="/zsrd/knc/flow/zsrd_knc_flow_main/mobile/list.jsp"/>
+        </action>
+
+
+    </action-mappings>
+    <!-- 消息资源 -->
+    <message-resources
+            parameter="com.landray.kmss.zsrd.knc.flow.ApplicationResources"
+            key="zsrd-knc-flow"/>
+</struts-config>

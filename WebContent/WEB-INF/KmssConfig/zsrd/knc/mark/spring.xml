@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<bean id="zsrdKncMarkDetailDao" parent="KmssExtendDataAreaDao"
+		class="com.landray.kmss.zsrd.knc.mark.dao.hibernate.ZsrdKncMarkDetailDaoImp">
+		<property name="modelName"
+			value="com.landray.kmss.zsrd.knc.mark.model.ZsrdKncMarkDetail" />
+	</bean>
+
+	<bean id="zsrdKncMarkDetailTarget" parent="KmssExtendDataTarget"
+		class="com.landray.kmss.zsrd.knc.mark.service.spring.ZsrdKncMarkDetailServiceImp">
+		<property name="baseDao">
+			<ref local="zsrdKncMarkDetailDao" />
+		</property>
+		<property name="sysNotifyTodoDao">
+			<ref bean="sysNotifyTodoDao" />
+		</property>
+	</bean>
+	<bean id="zsrdKncMarkDetailService" parent="KmssBaseService">
+		<property name="target">
+			<ref local="zsrdKncMarkDetailTarget" />
+		</property>
+	</bean>
+
+
+	<bean id="zsrdKncMarkMainDao" parent="KmssExtendDataAreaDao"
+		class="com.landray.kmss.zsrd.knc.mark.dao.hibernate.ZsrdKncMarkMainDaoImp">
+		<property name="modelName"
+			value="com.landray.kmss.zsrd.knc.mark.model.ZsrdKncMarkMain" />
+	</bean>
+
+	<bean id="zsrdKncMarkMainTarget" parent="KmssExtendDataTarget"
+		class="com.landray.kmss.zsrd.knc.mark.service.spring.ZsrdKncMarkMainServiceImp">
+		<property name="baseDao">
+			<ref local="zsrdKncMarkMainDao" />
+		</property>
+	</bean>
+	<bean id="zsrdKncMarkMainService" parent="KmssBaseService">
+		<property name="target">
+			<ref local="zsrdKncMarkMainTarget" />
+		</property>
+	</bean>
+
+	<!-- 评分接口 -->
+
+	<bean id="markService" parent="KmssBaseService">
+		<property name="target">
+			<bean
+				class="com.landray.kmss.zsrd.knc.mark.webservice.impl.MarkServiceImpl">
+				<property name="markDetailService">
+					<ref local="zsrdKncMarkDetailService" />
+				</property>
+				<property name="markMainService">
+					<ref local="zsrdKncMarkMainService" />
+				</property>
+				<property name="sysNotifyTodoService">
+					<ref bean="sysNotifyTodoService" />
+				</property>
+				<property name="sysOrgPersonService">
+					<ref bean="sysOrgPersonService" />
+				</property>
+				<property name="sysNotifyTodoDao">
+					<ref bean="sysNotifyTodoDao" />
+				</property>
+
+			</bean>
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="appLoginService"	class="com.landray.kmss.zsrd.knc.app.webservice.impl.AppLoginServiceImpl">
+	   
+    </bean>
+	
+</beans>

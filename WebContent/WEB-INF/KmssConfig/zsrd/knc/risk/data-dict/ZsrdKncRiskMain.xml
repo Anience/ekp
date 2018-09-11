@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<models
+	xmlns="http://www.example.org/design-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/design-config ../../../data-dict.xsd ">
+	<model
+		modelName="com.landray.kmss.zsrd.knc.risk.model.ZsrdKncRiskMain"
+		messageKey="zsrd-knc-risk:table.zsrdKncRiskMain"
+		displayProperty="fdDescription"
+		serviceBean="zsrdKncRiskMainService"
+		table="zsrd_knc_risk_main"
+		url="/zsrd/knc/risk/zsrd_knc_risk_main/zsrdKncRiskMain.do?method=view&amp;fdId=${fdId}">
+
+		<idProperty>
+			<generator
+				type="assigned" />
+		</idProperty>
+
+		<simpleProperty
+			name="fdSubject"
+			messageKey="zsrd-knc-risk:zsrdKncRiskMain.fdSubject"
+			type="String"
+			column="fd_subject"
+			notNull="false"
+			length="200"
+			validate="true" />
+
+		<simpleProperty
+			name="fdDescription"
+			messageKey="zsrd-knc-risk:zsrdKncRiskMain.fdDescription"
+			type="String"
+			column="fd_description"
+			notNull="false"
+			length="1000"
+			validate="false" />
+
+		<simpleProperty
+			name="docStatus"
+			messageKey="zsrd-knc-risk:zsrdKncRiskMain.docStatus"
+			type="String"
+			column="doc_status"
+			notNull="false"
+			length="2"
+			validate="false" />
+
+		<simpleProperty
+			name="docCreateTime"
+			messageKey="zsrd-knc-risk:zsrdKncRiskMain.docCreateTime"
+			type="DateTime"
+			column="doc_create_time"
+			notNull="false"
+			validate="false" />
+
+		<simpleProperty
+			name="docAlterTime"
+			messageKey="zsrd-knc-risk:zsrdKncRiskMain.docAlterTime"
+			type="DateTime"
+			column="doc_alter_time"
+			notNull="false"
+			validate="false" />
+
+		<simpleProperty
+			name="fdLastModifiedTime"
+			messageKey="zsrd-knc-risk:zsrdKncRiskMain.fdLastModifiedTime"
+			type="DateTime"
+			column="fd_last_modified_time"
+			notNull="false"
+			validate="false" />
+
+		<simpleProperty
+			name="docPublishTime"
+			messageKey="zsrd-knc-risk:zsrdKncRiskMain.docPublishTime"
+			type="DateTime"
+			column="doc_publish_time"
+			notNull="false"
+			validate="false" />
+
+		<simpleProperty
+			name="fdCode"
+			messageKey="zsrd-knc-risk:zsrdKncRiskMain.fdCode"
+			type="String"
+			column="fd_code"
+			notNull="false"
+			length="50"
+			validate="false" />
+
+		<simpleProperty
+			name="fdInfluence"
+			messageKey="zsrd-knc-risk:zsrdKncRiskMain.fdInfluence"
+			type="String"
+			column="fd_influence"
+			notNull="false"
+			length="36"
+			enumType="zsrd_knc_risk_main_fd_influence"
+			validate="false" />
+
+		<simpleProperty
+			name="fdPossibility"
+			messageKey="zsrd-knc-risk:zsrdKncRiskMain.fdPossibility"
+			type="String"
+			column="fd_possibility"
+			notNull="false"
+			length="36"
+			enumType="zsrd_knc_risk_main_fd_possibility"
+			validate="false" />
+
+		<simpleProperty
+			name="fdGrade"
+			messageKey="zsrd-knc-risk:zsrdKncRiskMain.fdGrade"
+			type="String"
+			column="fd_grade"
+			notNull="false"
+			length="36"
+			validate="false" />
+
+		<simpleProperty
+			name="fdControlFrequency"
+			messageKey="zsrd-knc-risk:zsrdKncRiskMain.fdControlFrequency"
+			type="String"
+			column="fd_control_frequency"
+			notNull="false"
+			length="36"
+			enumType="zsrd_knc_risk_main_fd_control_frequency"
+			validate="false" />
+
+		<simpleProperty
+			name="fdControlType"
+			messageKey="zsrd-knc-risk:zsrdKncRiskMain.fdControlType"
+			type="String"
+			column="fd_control_type"
+			notNull="false"
+			length="36"
+			enumType="zsrd_knc_risk_main_fd_control_type"
+			validate="false" />
+
+		<simpleProperty
+			name="fdValue"
+			messageKey="zsrd-knc-risk:zsrdKncRiskMain.fdValue"
+			type="String"
+			column="fd_value"
+			notNull="false"
+			length="36"
+			validate="false" />
+
+		<simpleProperty
+			name="fdControlTarget"
+			messageKey="zsrd-knc-risk:zsrdKncRiskMain.fdControlTarget"
+			type="String"
+			column="fd_control_target"
+			notNull="false"
+			length="100"
+			validate="false" />
+
+		<simpleProperty
+			name="fdControlStep"
+			messageKey="zsrd-knc-risk:zsrdKncRiskMain.fdControlStep"
+			type="String"
+			column="fd_control_step"
+			notNull="false"
+			length="1000"
+			validate="false" />
+
+		<modelProperty
+			name="docCategory"
+			messageKey="zsrd-knc-risk:zsrdKncRiskMain.docCategory"
+			type="com.landray.kmss.zsrd.knc.risk.model.ZsrdKncRiskCategory"
+			column="doc_category_id"
+			notNull="false"
+			validate="false" />
+
+		<modelProperty
+			name="docCreator"
+			messageKey="zsrd-knc-risk:zsrdKncRiskMain.docCreator"
+			type="com.landray.kmss.sys.organization.model.SysOrgElement"
+			column="doc_creator_id"
+			notNull="false"
+			validate="false" />
+
+		<modelProperty
+			name="fdType"
+			messageKey="zsrd-knc-risk:zsrdKncRiskMain.fdType"
+			type="com.landray.kmss.zsrd.knc.risk.model.ZsrdKncBusinessType"
+			column="fd_type"
+			notNull="false"
+			validate="false" />
+
+		<modelProperty
+			name="fdFlow"
+			messageKey="zsrd-knc-risk:zsrdKncRiskMain.fdFlow"
+			type="com.landray.kmss.zsrd.knc.risk.model.ZsrdKncFlowLink"
+			column="fd_flow_link_id"
+			notNull="false"
+			validate="false" />
+
+ 
+
+ 
+	</model>
+</models>

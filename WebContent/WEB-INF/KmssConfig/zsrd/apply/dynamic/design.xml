@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs
+	xmlns="http://www.example.org/design-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/design-config ../../design.xsd ">
+
+	<module
+		messageKey="zsrd-apply-dynamic:module.zsrd.apply.dynamic"
+		urlPrefix="/zsrd/apply/dynamic/"
+		defaultValidator="roleValidator(role=ROLE_ZSRDAPPLYDYNAMIC_DEFAULT)">
+		<roles>
+			ROLE_ZSRDAPPLYDYNAMIC_DEFAULT
+		</roles>
+
+		<request
+			path="zsrd_apply_dynamic_category/zsrdApplyDynamicCategory*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.zsrd.apply.dynamic.model.ZsrdApplyDynamicCategory">
+		</request>
+
+		<request
+			path="zsrd_apply_dynamic/zsrdApplyDynamic*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.zsrd.apply.dynamic.model.ZsrdApplyDynamic">
+		</request>
+
+	</module>
+
+	<homePage
+		urlPrefix="zsrd/apply/dynamic"
+		config="/moduleindex_notopic.jsp?nav=/zsrd/apply/dynamic/tree.jsp"
+		url="/zsrd/apply/dynamic/index.jsp"
+		messageKey="zsrd-apply-dynamic:module.zsrd.apply.dynamic" />
+
+	<flowDef
+			modelName="com.landray.kmss.zsrd.apply.dynamic.model.ZsrdApplyDynamic"
+			templateModelName="com.landray.kmss.zsrd.apply.dynamic.model.ZsrdApplyDynamicCategory"
+			key="zsrdApplyDynamicDoc"
+			templatePropertyName="docCategoryId"
+			moduleMessageKey="zsrd-apply-dynamic:module.zsrd.apply.dynamic"
+			type="oa" />
+
+
+</configs>

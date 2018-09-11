@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<models
+	xmlns="http://www.example.org/design-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/design-config ../../../data-dict.xsd ">
+	<model
+		modelName="com.landray.kmss.zsrd.apply.carrepair.model.ZsrdApplyCarpro"
+		messageKey="zsrd-apply-carrepair:table.zsrdApplyCarpro"
+		displayProperty="fdId"
+		serviceBean="zsrdApplyCarproService"
+		table="zsrd_apply_carpro"
+		url="/zsrd/apply/carrepair/zsrd_apply_carpro/zsrdApplyCarpro.do?method=view&amp;fdId=${fdId}">
+
+		<idProperty>
+			<generator
+				type="assigned" />
+		</idProperty>
+
+		<modelProperty
+			name="fdProid"
+			messageKey="zsrd-apply-carrepair:zsrdApplyCarpro.fdProid"
+			type="com.landray.kmss.zsrd.apply.carrepair.model.ZsrdApplyCarrepair"
+			column="fd_proid"
+			notNull="false"
+			validate="false" />
+
+ 
+
+ 
+	</model>
+</models>

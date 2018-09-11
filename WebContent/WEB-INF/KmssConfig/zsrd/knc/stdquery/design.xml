@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs
+	xmlns="http://www.example.org/design-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/design-config ../../design.xsd ">
+
+	<module
+		messageKey="zsrd-knc-stdquery:module.zsrd.knc.stdquery"
+		urlPrefix="/zsrd/knc/stdquery/"
+		defaultValidator="roleValidator(role=ROLE_ZSRDKNCSTDQUERY_DEFAULT)">
+		<roles>
+			ROLE_ZSRDKNCSTDQUERY_DEFAULT
+		</roles>
+
+		<request
+			path="zsrd_knc_std_query_category/zsrdKncStdQueryCategory*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.zsrd.knc.stdquery.model.ZsrdKncStdQueryCategory">
+		</request>
+
+		<request
+			path="zsrd_knc_std_query_detail/zsrdKncStdQueryDetail*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.zsrd.knc.stdquery.model.ZsrdKncStdQueryDetail">
+		</request>
+
+		<request
+				path="zsrd_knc_std_query_program/zsrdKncStdQueryProgram*"
+				validatorParameter="recid=fdId,model=com.landray.kmss.zsrd.knc.stdquery.model.ZsrdKncStdQueryProgram">
+		</request>
+
+	</module>
+
+	<homePage
+		urlPrefix="zsrd/knc/stdquery"
+		config="/moduleindex_notopic.jsp?nav=/zsrd/knc/stdquery/tree.jsp"
+		url="/zsrd/knc/stdquery/index.jsp"
+		messageKey="zsrd-knc-stdquery:module.zsrd.knc.stdquery" />
+ 
+
+ 
+</configs>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<models
+	xmlns="http://www.example.org/design-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/design-config ../../../data-dict.xsd ">
+	<model
+		modelName="com.landray.kmss.zsrd.apply.wine.model.ZsrdApplyWine"
+		messageKey="zsrd-apply-wine:table.zsrdApplyWine"
+		displayProperty="docSubject"
+		serviceBean="zsrdApplyWineService"
+		table="zsrd_apply_wine"
+		url="/zsrd/apply/wine/zsrd_apply_wine/zsrdApplyWine.do?method=view&amp;fdId=${fdId}">
+
+		<idProperty>
+			<generator
+				type="assigned" />
+		</idProperty>
+
+		<simpleProperty
+			name="docStatus"
+			messageKey="zsrd-apply-wine:zsrdApplyWine.docStatus"
+			type="String"
+			column="doc_status"
+			notNull="false"
+			length="2"
+			validate="false" />
+
+		<simpleProperty
+			name="docCreateTime"
+			messageKey="zsrd-apply-wine:zsrdApplyWine.docCreateTime"
+			type="DateTime"
+			column="doc_create_time"
+			notNull="false"
+			validate="false" />
+
+		<simpleProperty
+			name="fdRemark"
+			messageKey="zsrd-apply-wine:zsrdApplyWine.fdRemark"
+			type="String"
+			column="fd_remark"
+			notNull="false"
+			length="500"
+			validate="false" />
+			
+		<simpleProperty
+			name="fdReason"
+			messageKey="zsrd-apply-wine:zsrdApplyWine.fdReason"
+			type="String"
+			column="fd_reason"
+			notNull="false"
+			length="500"
+			validate="false" />
+
+		<simpleProperty
+			name="docSubject"
+			messageKey="zsrd-apply-wine:zsrdApplyWine.docSubject"
+			type="String"
+			column="doc_subject"
+			notNull="false"
+			length="400"
+			validate="false" />
+
+		<modelProperty
+			name="docCreator"
+			messageKey="zsrd-apply-wine:zsrdApplyWine.docCreator"
+			type="com.landray.kmss.sys.organization.model.SysOrgElement"
+			column="doc_creator_id"
+			notNull="false"
+			validate="false" />
+
+ 
+
+ 
+	</model>
+</models>

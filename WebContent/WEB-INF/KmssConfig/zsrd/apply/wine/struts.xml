@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+<struts-config>
+	<!-- 表单 Bean -->
+	<form-beans>
+		<form-bean
+			name="zsrdApplyWineForm"
+			type="com.landray.kmss.zsrd.apply.wine.forms.ZsrdApplyWineForm" />
+		<form-bean
+			name="zsrdApplyWinemgForm"
+			type="com.landray.kmss.zsrd.apply.wine.forms.ZsrdApplyWinemgForm" />
+	</form-beans>
+
+	<!-- 操作映射 -->
+	<action-mappings>
+		<action
+			path="/zsrd/apply/wine/zsrd_apply_wine/zsrdApplyWine"
+			type="com.landray.kmss.zsrd.apply.wine.actions.ZsrdApplyWineAction"
+			name="zsrdApplyWineForm"
+			parameter="method"
+			input="edit"
+			unknown="false"
+			validate="true"
+			scope="request">
+			<forward
+				name="view"
+				path="/zsrd/apply/wine/zsrd_apply_wine/zsrdApplyWine_view.jsp" />
+			<forward
+				name="edit"
+				path="/zsrd/apply/wine/zsrd_apply_wine/zsrdApplyWine_edit.jsp" />
+			<forward
+				name="list"
+				path="/zsrd/apply/wine/zsrd_apply_wine/zsrdApplyWine_list.jsp" />
+			<forward
+				name="data"
+				path="/zsrd/apply/wine/zsrd_apply_wine/zsrdApplyWine_data.jsp" />
+		</action>
+
+		<action
+			path="/zsrd/apply/wine/zsrd_apply_wineMg/zsrdApplyWinemg"
+			type="com.landray.kmss.zsrd.apply.wine.actions.ZsrdApplyWinemgAction"
+			name="zsrdApplyWinemgForm"
+			parameter="method"
+			input="edit"
+			unknown="false"
+			validate="true"
+			scope="request">
+			<forward
+				name="view"
+				path="/zsrd/apply/wine/zsrd_apply_wineMg/zsrdApplyWinemg_view.jsp" />
+			<forward
+				name="edit"
+				path="/zsrd/apply/wine/zsrd_apply_wineMg/zsrdApplyWinemg_edit.jsp" />
+			<forward
+				name="list"
+				path="/zsrd/apply/wine/zsrd_apply_wineMg/zsrdApplyWinemg_list.jsp" />
+			<forward
+				name="data"
+				path="/zsrd/apply/wine/zsrd_apply_wineMg/zsrdApplyWinemg_data.jsp" />
+		</action>
+
+
+	</action-mappings>
+	<!-- 消息资源 -->
+	<message-resources
+		parameter="com.landray.kmss.zsrd.apply.wine.ApplicationResources"
+		key="zsrd-apply-wine" />
+</struts-config>

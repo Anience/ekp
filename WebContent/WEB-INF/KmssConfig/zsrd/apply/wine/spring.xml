@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	
+	<bean
+		id="zsrdApplyWineDao"
+		parent="KmssExtendDataAreaDao"
+		class="com.landray.kmss.zsrd.apply.wine.dao.hibernate.ZsrdApplyWineDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.zsrd.apply.wine.model.ZsrdApplyWine" />
+	</bean>
+
+	<bean
+		id="zsrdApplyWineTarget"
+		parent="KmssExtendDataTarget"
+		class="com.landray.kmss.zsrd.apply.wine.service.spring.ZsrdApplyWineServiceImp">
+		<property
+			name="baseDao">
+		<!--<property-->
+				<!--name="zsrdApplyWineDao">-->
+			<ref
+				local="zsrdApplyWineDao" />
+		</property>
+	</bean>
+	<bean
+		id="zsrdApplyWineService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="zsrdApplyWineTarget" />
+		</property>
+	</bean>
+
+	
+	<bean
+		id="zsrdApplyWinemgDao"
+		parent="KmssExtendDataAreaDao"
+		class="com.landray.kmss.zsrd.apply.wine.dao.hibernate.ZsrdApplyWinemgDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.zsrd.apply.wine.model.ZsrdApplyWinemg" />
+	</bean>
+
+	<bean
+		id="zsrdApplyWinemgTarget"
+		parent="KmssExtendDataTarget"
+		class="com.landray.kmss.zsrd.apply.wine.service.spring.ZsrdApplyWinemgServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="zsrdApplyWinemgDao" />
+		</property>
+	</bean>
+	<bean
+		id="zsrdApplyWinemgService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="zsrdApplyWinemgTarget" />
+		</property>
+	</bean>
+
+</beans>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<models
+	xmlns="http://www.example.org/design-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/design-config ../../../data-dict.xsd ">
+	<model
+		modelName="com.landray.kmss.zsrd.apply.carrepair.model.ZsrdApplyCarrepair"
+		messageKey="zsrd-apply-carrepair:table.zsrdApplyCarrepair"
+		displayProperty="fdReason"
+		serviceBean="zsrdApplyCarrepairService"
+		table="zsrd_apply_carrepair"
+		url="/zsrd/apply/carrepair/zsrd_apply_carrepair/zsrdApplyCarrepair.do?method=view&amp;fdId=${fdId}">
+
+		<idProperty>
+			<generator
+				type="assigned" />
+		</idProperty>
+
+		<simpleProperty
+			name="fdCarnum"
+			messageKey="zsrd-apply-carrepair:zsrdApplyCarrepair.fdCarnum"
+			type="String"
+			column="fd_carnum"
+			notNull="false"
+			length="2"
+			validate="false" />
+
+		<simpleProperty
+			name="fdReason"
+			messageKey="zsrd-apply-carrepair:zsrdApplyCarrepair.fdReason"
+			type="DateTime"
+			column="fd_reason"
+			notNull="false"
+			validate="false" />
+
+		<simpleProperty
+			name="fdProject"
+			messageKey="zsrd-apply-carrepair:zsrdApplyCarrepair.fdProject"
+			type="String"
+			column="fd_project"
+			notNull="false"
+			length="500"
+			validate="false" />
+
+		<simpleProperty
+			name="docCreateTime"
+			messageKey="zsrd-apply-carrepair:zsrdApplyCarrepair.docCreateTime"
+			type="DateTime"
+			column="doc_create_time"
+			notNull="false"
+			validate="false" />
+
+		<modelProperty
+			name="docCreator"
+			messageKey="zsrd-apply-carrepair:zsrdApplyCarrepair.docCreator"
+			type="com.landray.kmss.sys.organization.model.SysOrgElement"
+			column="fd_precost"
+			notNull="false"
+			validate="false" />
+
+		<modelProperty
+			name="docCreator"
+			messageKey="zsrd-apply-carrepair:zsrdApplyCarrepair.docCreator"
+			type="com.landray.kmss.sys.organization.model.SysOrgElement"
+			column="doc_creator_id"
+			notNull="false"
+			validate="false" />
+
+ 
+
+ 
+	</model>
+</models>

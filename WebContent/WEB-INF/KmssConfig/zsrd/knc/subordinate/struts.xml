@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+<struts-config>
+
+
+	<!-- 操作映射 -->
+	<action-mappings>
+
+		<action
+			path="/zsrd/knc/subordinate/subordinate"
+			type="com.landray.kmss.zsrd.knc.subordinate.actions.SubordinateAction"
+			parameter="method"
+			scope="request">
+			<forward
+					name="list"
+					path="/zsrd/knc/subordinate/staffTodo_list.jsp" />
+			<forward
+                    name="getSubStaffTodoDoneInfo"
+                    path="/zsrd/knc/subordinate/staffTodoDoneInfo.jsp">
+            </forward>
+            <forward
+                    name="getSubStaffTodoDoneInfoNull"
+                    path="/zsrd/knc/subordinate/ToDoneNull.jsp">
+            </forward>
+            <forward
+                    name="null"
+                    path="/zsrd/knc/subordinate/ToDoNull.jsp">
+            </forward>
+		</action>
+
+
+	</action-mappings>
+	<!-- 消息资源 -->
+	<message-resources
+		parameter="com.landray.kmss.zsrd.knc.subordinate.ApplicationResources"
+		key="zsrd-knc-subordinate" />
+</struts-config>

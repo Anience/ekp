@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<models
+	xmlns="http://www.example.org/design-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/design-config ../../../data-dict.xsd ">
+	<model
+		modelName="com.landray.kmss.zsrd.knc.risk.model.ZsrdKncBusinessType"
+		messageKey="zsrd-knc-risk:table.zsrdKncBusinessType"
+		displayProperty="fdId"
+		serviceBean="zsrdKncBusinessTypeService"
+		table="zsrd_knc_business_type"
+		url="/zsrd/knc/risk/zsrd_knc_business_type/zsrdKncBusinessType.do?method=view&amp;fdId=${fdId}">
+
+		<idProperty>
+			<generator
+				type="native" />
+		</idProperty>
+
+		<simpleProperty
+			name="fdName"
+			messageKey="zsrd-knc-risk:zsrdKncBusinessType.fdName"
+			type="String"
+			column="fd_name"
+			notNull="false"
+			length="50"
+			validate="true" />
+
+ 
+
+ 
+	</model>
+</models>

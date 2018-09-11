@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs
+	xmlns="http://www.example.org/design-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/design-config ../../design.xsd ">
+
+	<module
+		messageKey="zsrd-apply-sarah:module.zsrd.apply.sarah"
+		urlPrefix="/zsrd/apply/sarah/"
+		defaultValidator="roleValidator(role=ROLE_ZSRDAPPLYSARAH_DEFAULT)">
+		<roles>
+			ROLE_ZSRDAPPLYSARAH_DEFAULT
+		</roles>
+
+		<request
+			path="zsrd_apply_sarah/zsrdApplySarah*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.zsrd.apply.sarah.model.ZsrdApplySarah">
+		</request>
+
+	</module>
+
+	<homePage
+		urlPrefix="zsrd/apply/sarah"
+		config="/moduleindex_notopic.jsp?nav=/zsrd/apply/sarah/tree.jsp"
+		url="/zsrd/apply/sarah/index.jsp"
+		messageKey="zsrd-apply-sarah:module.zsrd.apply.sarah" />
+ 
+    <flowDef
+	    modelName="com.landray.kmss.zsrd.apply.sarah.model.ZsrdApplySarah"
+	    templateModelName="com.landray.kmss.zsrd.apply.sarah.model.ZsrdApplySarah"
+	    key="ZsrdApplySarahDoc"
+	    moduleMessageKey="zsrd-apply-sarah:module.zsrd.apply.seal"
+	    type="oa" />
+ 
+</configs>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	
+	<bean
+		id="zsrdApplyDynamicCategoryDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.zsrd.apply.dynamic.dao.hibernate.ZsrdApplyDynamicCategoryDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.zsrd.apply.dynamic.model.ZsrdApplyDynamicCategory" />
+	</bean>
+
+	<bean
+		id="zsrdApplyDynamicCategoryTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.zsrd.apply.dynamic.service.spring.ZsrdApplyDynamicCategoryServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="zsrdApplyDynamicCategoryDao" />
+		</property>
+	</bean>
+	<bean
+		id="zsrdApplyDynamicCategoryService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="zsrdApplyDynamicCategoryTarget" />
+		</property>
+	</bean>
+
+	
+	<bean
+		id="zsrdApplyDynamicDao"
+		parent="KmssExtendDataAreaDao"
+		class="com.landray.kmss.zsrd.apply.dynamic.dao.hibernate.ZsrdApplyDynamicDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.zsrd.apply.dynamic.model.ZsrdApplyDynamic" />
+	</bean>
+
+	<bean
+		id="zsrdApplyDynamicTarget"
+		parent="KmssExtendDataTarget"
+		class="com.landray.kmss.zsrd.apply.dynamic.service.spring.ZsrdApplyDynamicServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="zsrdApplyDynamicDao" />
+		</property>
+		<property
+				name="zsrdApplyDynamicDao">
+			<ref
+					local="zsrdApplyDynamicDao" />
+		</property>
+		<!--<property
+				name="sysOrgElementService">
+			<ref
+					bean="sysOrgElementService"/>
+		</property>-->
+		<!--<property
+			name="zsrdApplyDynamicCategoryService">
+		<ref
+				bean="zsrdApplyDynamicCategoryService"/>
+	</property>-->
+	</bean>
+	<bean
+		id="zsrdApplyDynamicService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="zsrdApplyDynamicTarget" />
+		</property>
+	</bean>
+
+</beans>

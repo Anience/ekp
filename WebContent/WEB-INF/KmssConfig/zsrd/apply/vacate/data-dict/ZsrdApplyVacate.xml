@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<models
+	xmlns="http://www.example.org/design-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/design-config ../../../data-dict.xsd ">
+	<model
+		modelName="com.landray.kmss.zsrd.apply.vacate.model.ZsrdApplyVacate"
+		messageKey="zsrd-apply-vacate:table.zsrdApplyVacate"
+		displayProperty="fdDepart"
+		serviceBean="zsrdApplyVacateService"
+		table="zsrd_apply_vacate"
+		url="/zsrd/apply/vacate/zsrd_apply_vacate/zsrdApplyVacate.do?method=view&amp;fdId=${fdId}">
+
+		<idProperty>
+			<generator
+				type="assigned" />
+		</idProperty>
+
+		<simpleProperty
+			name="docStatus"
+			messageKey="zsrd-apply-vacate:zsrdApplyVacate.docStatus"
+			type="String"
+			column="doc_status"
+			notNull="false"
+			length="2"
+			validate="false" />
+
+		<simpleProperty
+			name="docCreateTime"
+			messageKey="zsrd-apply-vacate:zsrdApplyVacate.docCreateTime"
+			type="DateTime"
+			column="doc_create_time"
+			notNull="false"
+			validate="false" />
+
+		<simpleProperty
+			name="fdVacateReason"
+			messageKey="zsrd-apply-vacate:zsrdApplyVacate.fdVacateReason"
+			type="String"
+			column="fd_vacate_reason"
+			notNull="false"
+			length="500"
+			validate="false" />
+
+		<simpleProperty
+			name="fdVacateType"
+			messageKey="zsrd-apply-vacate:zsrdApplyVacate.fdVacateType"
+			type="String"
+			column="fd_vacate_type"
+			notNull="false"
+			length="36"
+			validate="false" />
+
+		<simpleProperty
+			name="fdVisit"
+			messageKey="zsrd-apply-vacate:zsrdApplyVacate.fdVisit"
+			type="String"
+			column="fd_visit"
+			notNull="false"
+			length="36"
+			validate="false" />
+
+		<simpleProperty
+			name="fdVisitRelation"
+			messageKey="zsrd-apply-vacate:zsrdApplyVacate.fdVisitRelation"
+			type="String"
+			column="fd_visit_relation"
+			notNull="false"
+			length="36"
+			validate="false" />
+
+		<simpleProperty
+			name="fdVisitPlace"
+			messageKey="zsrd-apply-vacate:zsrdApplyVacate.fdVisitPlace"
+			type="String"
+			column="fd_visit_place"
+			notNull="false"
+			length="500"
+			validate="false" />
+
+		<simpleProperty
+			name="fdVacateStart"
+			messageKey="zsrd-apply-vacate:zsrdApplyVacate.fdVacateStart"
+			type="DateTime"
+			column="fd_vacate_start"
+			notNull="false"
+			validate="false" />
+
+		<simpleProperty
+			name="fdVacateEnd"
+			messageKey="zsrd-apply-vacate:zsrdApplyVacate.fdVacateEnd"
+			type="DateTime"
+			column="fd_vacate_end"
+			notNull="false"
+			validate="false" />
+
+		<simpleProperty
+			name="fdRegisterTime"
+			messageKey="zsrd-apply-vacate:zsrdApplyVacate.fdRegisterTime"
+			type="DateTime"
+			column="fd_register_time"
+			notNull="false"
+			validate="false" />
+
+		<modelProperty
+			name="fdDepart"
+			messageKey="zsrd-apply-vacate:zsrdApplyVacate.fdDepart"
+			type="com.landray.kmss.common.model.SysOrgElement"
+			column="fd_depart"
+			notNull="false"
+			validate="false" />
+
+		<modelProperty
+			name="docCreator"
+			messageKey="zsrd-apply-vacate:zsrdApplyVacate.docCreator"
+			type="com.landray.kmss.sys.organization.model.SysOrgElement"
+			column="doc_creator_id"
+			notNull="false"
+			validate="false" />
+
+		<modelProperty
+			name="fdPosition"
+			messageKey="zsrd-apply-vacate:zsrdApplyVacate.fdPosition"
+			type="com.landray.kmss.common.model.SysOrgElement"
+			column="fd_position"
+			notNull="false"
+			validate="false" />
+			
+		<modelProperty
+			name="fdVacatePerson"
+			messageKey="zsrd-apply-vacate:zsrdApplyVacate.fdVacatePerson"
+			type="com.landray.kmss.common.model.SysOrgElement"
+			column="fd_vacateperson_id"
+			notNull="false"
+			validate="false" />
+
+		<simpleProperty
+			name="fdAsk"
+			messageKey="zsrd-apply-vacate:zsrdApplyVacate.fdAsk"
+			type="String"
+			column="fd_ask"
+			notNull="false"
+			length="5"
+			validate="false" />
+ 
+		<modelProperty
+			name="fdOverPlus"
+			messageKey="zsrd-apply-vacate:zsrdApplyVacate.fdOverPlus"
+			type="com.landray.kmss.sys.organization.model.SysOrgPerson"
+			column="doc_creator_id"
+			notNull="false"
+			validate="false" />
+ 
+		<simpleProperty
+			name="fdVacateDate"
+			messageKey="zsrd-apply-vacate:zsrdApplyVacate.fdVacateDate"
+			type="String"
+			column="fd_vacatedate"
+			notNull="false"
+			length="10"
+			validate="false" />
+ 
+	</model>
+</models>

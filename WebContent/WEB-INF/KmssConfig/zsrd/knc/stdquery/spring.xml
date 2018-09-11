@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+    <bean
+            id="zsrdKncStdQueryCategoryDao"
+            parent="KmssAuthBaseDao"
+            class="com.landray.kmss.zsrd.knc.stdquery.dao.hibernate.ZsrdKncStdQueryCategoryDaoImp">
+        <property
+                name="modelName"
+                value="com.landray.kmss.zsrd.knc.stdquery.model.ZsrdKncStdQueryCategory"/>
+    </bean>
+
+    <bean
+            id="zsrdKncStdQueryCategoryTarget"
+            parent="KmssBaseTarget"
+            class="com.landray.kmss.zsrd.knc.stdquery.service.spring.ZsrdKncStdQueryCategoryServiceImp">
+        <property
+                name="baseDao">
+            <ref
+                    local="zsrdKncStdQueryCategoryDao"/>
+        </property>
+    </bean>
+    <bean
+            id="zsrdKncStdQueryCategoryService"
+            parent="KmssBaseService">
+        <property
+                name="target">
+            <ref
+                    local="zsrdKncStdQueryCategoryTarget"/>
+        </property>
+    </bean>
+
+
+    <bean
+            id="zsrdKncStdQueryDetailDao"
+            parent="KmssExtendDataAreaDao"
+            class="com.landray.kmss.zsrd.knc.stdquery.dao.hibernate.ZsrdKncStdQueryDetailDaoImp">
+        <property
+                name="modelName"
+                value="com.landray.kmss.zsrd.knc.stdquery.model.ZsrdKncStdQueryDetail"/>
+    </bean>
+
+    <bean
+            id="zsrdKncStdQueryDetailTarget"
+            parent="KmssExtendDataTarget"
+            class="com.landray.kmss.zsrd.knc.stdquery.service.spring.ZsrdKncStdQueryDetailServiceImp">
+        <property
+                name="zsrdKncStdQueryDetailDao">
+            <ref
+                    local="zsrdKncStdQueryDetailDao"/>
+        </property>
+        <property
+                name="zsrdKncStdQueryCategoryService">
+            <ref
+                    local="zsrdKncStdQueryCategoryService"/>
+        </property>
+    </bean>
+    <bean
+            id="zsrdKncStdQueryDetailService"
+            parent="KmssBaseService">
+        <property
+                name="target">
+            <ref
+                    local="zsrdKncStdQueryDetailTarget"/>
+        </property>
+
+
+    </bean>
+    <bean id="stdQueryService" parent="KmssBaseService">
+        <property name="target">
+            <bean
+                    class="com.landray.kmss.zsrd.knc.stdquery.webservice.impl.StdQueryServiceImpl">
+                <property name="zsrdKncStdQueryDetailService">
+                    <ref local="zsrdKncStdQueryDetailService"/>
+                </property>
+                <property name="zsrdKncStdQueryProgramService">
+                    <ref local="zsrdKncStdQueryProgramService"/>
+                </property>
+            </bean>
+        </property>
+        <property name="transactionAttributes">
+            <props>
+                <prop key="*">PROPAGATION_REQUIRED</prop>
+            </props>
+        </property>
+    </bean>
+    <bean
+            id="zsrdKncStdQueryProgramDao"
+            parent="KmssExtendDataAreaDao"
+            class="com.landray.kmss.zsrd.knc.stdquery.dao.hibernate.ZsrdKncStdQueryProgramDaoImp">
+        <property
+                name="modelName"
+                value="com.landray.kmss.zsrd.knc.stdquery.model.ZsrdKncStdQueryProgram"/>
+    </bean>
+
+    <bean
+            id="zsrdKncStdQueryProgramTarget"
+            parent="KmssExtendDataTarget"
+            class="com.landray.kmss.zsrd.knc.stdquery.service.spring.ZsrdKncStdQueryProgramServiceImp">
+        <property
+                name="baseDao">
+            <ref
+                    local="zsrdKncStdQueryProgramDao"/>
+        </property>
+    </bean>
+    <bean
+            id="zsrdKncStdQueryProgramService"
+            parent="KmssBaseService">
+        <property
+                name="target">
+            <ref
+                    local="zsrdKncStdQueryProgramTarget"/>
+        </property>
+    </bean>
+</beans>

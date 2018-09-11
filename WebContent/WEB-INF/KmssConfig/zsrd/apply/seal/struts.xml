@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+<struts-config>
+	<!-- 表单 Bean -->
+	<form-beans>
+		<form-bean
+			name="zsrdApplySealForm"
+			type="com.landray.kmss.zsrd.apply.seal.forms.ZsrdApplySealForm" />
+	</form-beans>
+
+	<!-- 操作映射 -->
+	<action-mappings>
+	<action
+				path="/zsrd/apply/seal/zsrd_apply_seal/zsrdApplySealDetail"
+				type="com.landray.kmss.zsrd.apply.seal.actions.ZsrdApplySealDetailAction"
+				parameter="method"
+				name="zsrdApplySealForm"
+				input="edit">
+			<forward
+					name="listChildren"
+					path="/zsrd/apply/seal/zsrd_apply_seal/zsrdApplySeal_data.jsp">
+			</forward>
+			<forward
+					name="data"
+					path="/zsrd/apply/seal/zsrd_apply_seal/zsrdApplySeal_data.jsp">
+			</forward>
+			<forward
+					name="listChildren.4m"
+					path="/zsrd/apply/seal/zsrd_apply_seal/mobile/list.jsp">
+			</forward>
+		</action>
+	
+	
+		<action
+			path="/zsrd/apply/seal/zsrd_apply_seal/zsrdApplySeal"
+			type="com.landray.kmss.zsrd.apply.seal.actions.ZsrdApplySealAction"
+			name="zsrdApplySealForm"
+			parameter="method"
+			input="edit"
+			unknown="false"
+			validate="true"
+			scope="request">
+			<forward
+				name="view"
+				path="/zsrd/apply/seal/zsrd_apply_seal/zsrdApplySeal_view.jsp" />
+			<forward
+				name="view.4m"
+				path="/zsrd/apply/seal/zsrd_apply_seal/mobile/view.jsp" />
+			<forward
+				name="edit"
+				path="/zsrd/apply/seal/zsrd_apply_seal/zsrdApplySeal_edit.jsp" />
+			<forward
+				name="data"
+				path="/zsrd/apply/seal/zsrd_apply_seal/zsrdApplySeal_data.jsp" />
+			<forward
+				name="data.4m"
+				path="/zsrd/apply/seal/zsrd_apply_seal/mobile/list.jsp" />
+			<forward
+				name="list"
+				path="/zsrd/apply/seal/zsrd_apply_seal/zsrdApplySeal_list.jsp" />
+		</action>
+
+
+	</action-mappings>
+	<!-- 消息资源 -->
+	<message-resources
+		parameter="com.landray.kmss.zsrd.apply.seal.ApplicationResources"
+		key="zsrd-apply-seal" />
+</struts-config>

@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+<struts-config>
+	<!-- 表单 Bean -->
+	<form-beans>
+		<form-bean
+			name="zsrdKncMarkDetailForm"
+			type="com.landray.kmss.zsrd.knc.mark.forms.ZsrdKncMarkDetailForm" />
+		<form-bean
+			name="zsrdKncMarkMainForm"
+			type="com.landray.kmss.zsrd.knc.mark.forms.ZsrdKncMarkMainForm" />
+	</form-beans>
+
+	<!-- 操作映射 -->
+	<action-mappings>
+		<action
+			path="/zsrd/knc/mark/zsrd_knc_mark_detail/zsrdKncMarkDetail"
+			type="com.landray.kmss.zsrd.knc.mark.actions.ZsrdKncMarkDetailAction"
+			name="zsrdKncMarkDetailForm"
+			parameter="method"
+			input="edit"
+			unknown="false"
+			validate="true"
+			scope="request">
+			<forward
+				name="view"
+				path="/zsrd/knc/mark/zsrd_knc_mark_detail/zsrdKncMarkDetail_view.jsp" />
+			<forward
+				name="edit"
+				path="/zsrd/knc/mark/zsrd_knc_mark_detail/zsrdKncMarkDetail_edit.jsp" />
+			<forward
+				name="list"
+				path="/zsrd/knc/mark/zsrd_knc_mark_detail/zsrdKncMarkDetail_list.jsp" />
+		</action>
+
+		<action
+			path="/zsrd/knc/mark/zsrd_knc_mark_main/zsrdKncMarkMain"
+			type="com.landray.kmss.zsrd.knc.mark.actions.ZsrdKncMarkMainAction"
+			name="zsrdKncMarkMainForm"
+			parameter="method"
+			input="edit"
+			unknown="false"
+			validate="true"
+			scope="request">
+			<forward
+				name="view"
+				path="/zsrd/knc/mark/zsrd_knc_mark_main/zsrdKncMarkMain_view.jsp" />
+			<forward
+				name="edit"
+				path="/zsrd/knc/mark/zsrd_knc_mark_main/zsrdKncMarkMain_edit.jsp" />
+			<forward
+				name="list"
+				path="/zsrd/knc/mark/zsrd_knc_mark_main/zsrdKncMarkMain_list.jsp" />
+		</action>
+
+
+	</action-mappings>
+	<!-- 消息资源 -->
+	<message-resources
+		parameter="com.landray.kmss.zsrd.knc.mark.ApplicationResources"
+		key="zsrd-knc-mark" />
+</struts-config>

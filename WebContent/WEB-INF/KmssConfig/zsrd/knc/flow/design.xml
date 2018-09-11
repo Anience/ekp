@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs
+	xmlns="http://www.example.org/design-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/design-config ../../design.xsd ">
+
+	<module
+		messageKey="zsrd-knc-flow:module.zsrd.knc.flow"
+		urlPrefix="/zsrd/knc/flow/"
+		defaultValidator="roleValidator(role=ROLE_ZSRDKNCFLOW_DEFAULT)">
+		<roles>
+			ROLE_ZSRDKNCFLOW_DEFAULT;<!-- 默认权限 -->
+			ROLE_ZSRDKNCFLOW_ADD;    <!-- 增 -->
+			ROLE_ZSRDKNCFLOW_DELETE; <!-- 删 -->
+			ROLE_ZSRDKNCFLOW_EDIT;   <!-- 改 -->
+			ROLE_ZSRDKNCFLOW_VIEW;   <!-- 查 -->
+		</roles>
+
+		<request
+			path="zsrd_knc_flow_category/zsrdKncFlowCategory*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.zsrd.knc.flow.model.ZsrdKncFlowCategory">
+		</request>
+
+		<request
+			path="zsrd_knc_flow_main/zsrdKncFlowMain*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.zsrd.knc.flow.model.ZsrdKncFlowMain">
+		    <query 
+		         queryString = "method=edit"
+		         validator = "roleValidator(role=ROLE_ZSRDKNCFLOW_EDIT)"/>
+		    <query 
+		         queryString = "method=delete"
+		         validator = "roleValidator(role=ROLE_ZSRDKNCFLOW_DELETE)"/>
+		     <query 
+		         queryString = "method=add"
+		         validator = "roleValidator(role=ROLE_ZSRDKNCFLOW_ADD)"/>
+		     <query 
+		         queryString = "method=view"
+		         validator = "roleValidator(role=ROLE_ZSRDKNCFLOW_VIEW)"/>		
+		</request>
+
+	</module>
+
+	<homePage
+		urlPrefix="zsrd/knc/flow"
+		config="/moduleindex_notopic.jsp?nav=/zsrd/knc/flow/tree.jsp"
+		url="/zsrd/knc/flow/index.jsp"
+		messageKey="zsrd-knc-flow:module.zsrd.knc.flow" />
+ 
+	<flowDef
+		modelName="com.landray.kmss.zsrd.knc.flow.model.ZsrdKncFlowMain"
+		templateModelName="com.landray.kmss.zsrd.knc.flow.model.ZsrdKncFlowCategory"
+		key="zsrdKncFlowMainDoc"
+		templatePropertyName="docCategoryId"
+		moduleMessageKey="zsrd-knc-flow:module.zsrd.knc.flow"
+		type="oa" />
+
+ 
+</configs>

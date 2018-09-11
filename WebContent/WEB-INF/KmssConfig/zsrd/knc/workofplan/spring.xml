@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+    <bean
+            id="zsrdKncWorkOfPlanDao"
+            parent="KmssExtendDataAreaDao"
+            class="com.landray.kmss.zsrd.knc.workofplan.dao.hibernate.ZsrdKncWorkOfPlanDaoImp">
+        <property
+                name="modelName"
+                value="com.landray.kmss.zsrd.knc.workofplan.model.ZsrdKncWorkOfPlan"/>
+    </bean>
+
+    <bean id="zsrdKncWorkOfPlanTarget"
+          parent="KmssExtendDataTarget"
+          class="com.landray.kmss.zsrd.knc.workofplan.service.spring.ZsrdKncWorkOfPlanServiceImp">
+        <property name="baseDao">
+            <ref local="zsrdKncWorkOfPlanDao"/>
+        </property>
+        <property name="zsrdApplySealService">
+            <ref bean="zsrdApplySealService"/>
+        </property>
+        <property name="lbpmProcessCoreService">
+            <ref bean="lbpmProcessCoreService"/>
+        </property>
+        <property name="backgroundAuthService">
+            <ref bean="backgroundAuthService"/>
+        </property>
+    </bean>
+    <bean id="zsrdKncWorkOfPlanService"
+          parent="KmssBaseService">
+        <property name="target">
+            <ref local="zsrdKncWorkOfPlanTarget"/>
+        </property>
+    </bean>
+
+</beans>

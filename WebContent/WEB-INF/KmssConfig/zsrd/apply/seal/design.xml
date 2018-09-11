@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs
+	xmlns="http://www.example.org/design-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/design-config ../../design.xsd ">
+
+	<module
+		messageKey="zsrd-apply-seal:module.zsrd.apply.seal"
+		urlPrefix="/zsrd/apply/seal/"
+		defaultValidator="roleValidator(role=ROLE_ZSRDAPPLYSEAL_DEFAULT)">
+		<roles>
+			ROLE_ZSRDAPPLYSEAL_DEFAULT
+		</roles>
+
+		<request
+			path="zsrd_apply_seal/zsrdApplySeal*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.zsrd.apply.seal.model.ZsrdApplySeal">
+		</request>
+
+	</module>
+
+	<homePage
+		urlPrefix="zsrd/apply/seal"
+		config="/moduleindex_notopic.jsp?nav=/zsrd/apply/seal/tree.jsp"
+		url="/zsrd/apply/seal/index.jsp"
+		messageKey="zsrd-apply-seal:module.zsrd.apply.seal" />
+ 
+    <flowDef
+	    modelName="com.landray.kmss.zsrd.apply.seal.model.ZsrdApplySeal"
+	    templateModelName="com.landray.kmss.zsrd.apply.seal.model.ZsrdApplySeal"
+	    key="zsrdApplySealDoc"
+	    moduleMessageKey="zsrd-apply-seal:module.zsrd.apply.seal"
+	    type="oa" />
+ 
+</configs>

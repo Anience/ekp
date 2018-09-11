@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<models
+	xmlns="http://www.example.org/design-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/design-config ../../../data-dict.xsd ">
+	<model
+		modelName="com.landray.kmss.zsrd.apply.dynamic.model.ZsrdApplyDynamic"
+		messageKey="zsrd-apply-dynamic:table.zsrdApplyDynamic"
+		displayProperty="docSubject"
+		serviceBean="zsrdApplyDynamicService"
+		table="zsrd_apply_dynamic"
+		url="/zsrd/apply/dynamic/zsrd_apply_dynamic/zsrdApplyDynamic.do?method=view&amp;fdId=${fdId}">
+
+		<idProperty>
+			<generator
+				type="assigned" />
+		</idProperty>
+
+		<simpleProperty
+			name="docSubject"
+			messageKey="zsrd-apply-dynamic:zsrdApplyDynamic.docSubject"
+			type="String"
+			column="doc_subject"
+			notNull="true"
+			length="200"
+			validate="true" />
+
+		<simpleProperty
+			name="docContent"
+			messageKey="zsrd-apply-dynamic:zsrdApplyDynamic.docContent"
+			type="RTF"
+			column="doc_content"
+			notNull="false"
+			length="1000000"
+			validate="false" />
+
+		<simpleProperty
+			name="fdDescription"
+			messageKey="zsrd-apply-dynamic:zsrdApplyDynamic.fdDescription"
+			type="String"
+			column="fd_description"
+			notNull="false"
+			length="1500"
+			validate="true" />
+
+		<simpleProperty
+			name="docStatus"
+			messageKey="zsrd-apply-dynamic:zsrdApplyDynamic.docStatus"
+			type="String"
+			column="doc_status"
+			notNull="true"
+			length="2"
+			validate="false" />
+
+		<simpleProperty
+			name="docCreateTime"
+			messageKey="zsrd-apply-dynamic:zsrdApplyDynamic.docCreateTime"
+			type="DateTime"
+			column="doc_create_time"
+			notNull="false"
+			validate="false" />
+
+		<simpleProperty
+			name="docAlterTime"
+			messageKey="zsrd-apply-dynamic:zsrdApplyDynamic.docAlterTime"
+			type="DateTime"
+			column="doc_alter_time"
+			notNull="false"
+			validate="false" />
+
+		<simpleProperty
+			name="fdLastModifiedTime"
+			messageKey="zsrd-apply-dynamic:zsrdApplyDynamic.fdLastModifiedTime"
+			type="DateTime"
+			column="fd_last_modified_time"
+			notNull="true"
+			validate="false" />
+
+		<simpleProperty
+			name="fdCategory"
+			messageKey="zsrd-apply-dynamic:zsrdApplyDynamic.fdCategory"
+			type="String"
+			column="fd_category"
+			notNull="false"
+			length="36"
+			validate="false" />
+
+		<simpleProperty
+			name="fdUrl"
+			messageKey="zsrd-apply-dynamic:zsrdApplyDynamic.fdUrl"
+			type="String"
+			column="fd_url"
+			notNull="false"
+			length="36"
+			validate="false" />
+			
+		<simpleProperty
+			name="docIsAnno"
+			messageKey="zsrd-apply-dynamic:zsrdApplyDynamic.docIsAnno"
+			type="String"
+			column="doc_isanno"
+			notNull="false"
+			length="36"
+			validate="false" />
+
+		<modelProperty
+			name="docCreator"
+			messageKey="zsrd-apply-dynamic:zsrdApplyDynamic.docCreator"
+			type="com.landray.kmss.sys.organization.model.SysOrgElement"
+			column="doc_creator"
+			notNull="false"
+			validate="false" />
+
+		<modelProperty
+			name="fdDepart"
+			messageKey="zsrd-apply-dynamic:zsrdApplyDynamic.fdDepart"
+			type="com.landray.kmss.common.model.SysOrgElement"
+			column="fd_depart"
+			notNull="false"
+			validate="false" />
+
+		<modelProperty
+			name="docCategory"
+			messageKey="zsrd-apply-dynamic:zsrdApplyDynamic.docCategory"
+			type="com.landray.kmss.zsrd.apply.dynamic.model.ZsrdApplyDynamicCategory"
+			column="doc_category"
+			notNull="false"
+			validate="false" />
+
+ 
+
+ 
+	</model>
+</models>

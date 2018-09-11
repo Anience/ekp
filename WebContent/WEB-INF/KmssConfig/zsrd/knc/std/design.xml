@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs
+	xmlns="http://www.example.org/design-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/design-config ../../design.xsd ">
+
+	<module
+		messageKey="zsrd-knc-std:module.zsrd.knc.std"
+		urlPrefix="/zsrd/knc/std/"
+		defaultValidator="roleValidator(role=ROLE_ZSRDKNCSTD_DEFAULT)">
+		<roles>
+			ROLE_ZSRDKNCSTD_DEFAULT;
+			ROLE_ZSRDKNCSTD_ADD;
+			ROLE_ZSRDKNCSTD_DELETE;
+			ROLE_ZSRDKNCSTD_EDIT;
+			ROLE_ZSRDKNCSTD_VIEW;
+		</roles>
+
+		<request
+			path="zsrd_knc_std_category/zsrdKncStdCategory*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.zsrd.knc.std.model.ZsrdKncStdCategory">
+		    <query 
+		         queryString = "method=edit"
+		         validator = "roleValidator(role=ROLE_ZSRDKNCSTD_EDIT)"/>
+		    <query 
+		         queryString = "method=delete"
+		         validator = "roleValidator(role=ROLE_ZSRDKNCSTD_DELETE)"/>
+		     <query 
+		         queryString = "method=add"
+		         validator = "roleValidator(role=ROLE_ZSRDKNCSTD_ADD)"/>
+		     <query 
+		         queryString = "method=view"
+		         validator = "roleValidator(role=ROLE_ZSRDKNCSTD_VIEW)"/>		
+		</request>
+
+		<request
+			path="zsrd_knc_std_main/zsrdKncStdMain*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.zsrd.knc.std.model.ZsrdKncStdMain">
+		</request>
+
+	</module>
+
+	<homePage
+		urlPrefix="zsrd/knc/std"
+		config="/moduleindex_notopic.jsp?nav=/zsrd/knc/std/tree.jsp"
+		url="/zsrd/knc/std/index.jsp"
+		messageKey="zsrd-knc-std:module.zsrd.knc.std" />
+
+	<flowDef
+		modelName="com.landray.kmss.zsrd.knc.std.model.ZsrdKncStdMain"
+		templateModelName="com.landray.kmss.zsrd.knc.std.model.ZsrdKncStdCategory"
+		key="zsrdKncStdMainDoc"
+		templatePropertyName="docCategoryId"
+		moduleMessageKey="zsrd-knc-std:module.zsrd.knc.std"
+		type="oa" /> 
+
+ 
+</configs>

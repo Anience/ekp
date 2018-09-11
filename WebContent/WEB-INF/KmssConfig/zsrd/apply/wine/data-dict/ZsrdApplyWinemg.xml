@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<models
+	xmlns="http://www.example.org/design-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/design-config ../../../data-dict.xsd ">
+	<model
+		modelName="com.landray.kmss.zsrd.apply.wine.model.ZsrdApplyWinemg"
+		messageKey="zsrd-apply-wine:table.zsrdApplyWinemg"
+		displayProperty="fdTypename"
+		serviceBean="zsrdApplyWinemgService"
+		table="zsrd_apply_wineMg"
+		url="/zsrd/apply/wine/zsrd_apply_winemg/zsrdApplyWinemg.do?method=view&amp;fdId=${fdId}">
+
+		<idProperty>
+			<generator
+				type="assigned" />
+		</idProperty>
+
+		<simpleProperty
+			name="fdTypename"
+			messageKey="zsrd-apply-wine:zsrdApplyWinemg.fdTypename"
+			type="String"
+			column="fd_typename"
+			notNull="false"
+			length="200"
+			validate="false" />
+
+		<simpleProperty
+			name="fdPrice"
+			messageKey="zsrd-apply-wine:zsrdApplyWinemg.fdPrice"
+			type="String"
+			column="fd_price"
+			notNull="false"
+			length="36"
+			validate="false" />
+
+		<simpleProperty
+			name="fdNum"
+			messageKey="zsrd-apply-wine:zsrdApplyWinemg.fdNum"
+			type="String"
+			column="fd_num"
+			notNull="false"
+			length="36"
+			validate="false" />
+
+		<simpleProperty
+			name="fdPer"
+			messageKey="zsrd-apply-wine:zsrdApplyWinemg.fdPer"
+			type="String"
+			column="fd_per"
+			notNull="false"
+			length="36"
+			validate="false" />
+
+		<modelProperty
+			name="fd"
+			messageKey="zsrd-apply-wine:zsrdApplyWinemg.fd"
+			type="com.landray.kmss.zsrd.apply.wine.model.ZsrdApplyWine"
+			column="fd_pid"
+			notNull="false"
+			validate="false" />
+
+ 
+
+ 
+	</model>
+</models>

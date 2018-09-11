@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<models
+	xmlns="http://www.example.org/design-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/design-config ../../../data-dict.xsd ">
+	<model
+		modelName="com.landray.kmss.zsrd.knc.mark.model.ZsrdKncMarkDetail"
+		messageKey="zsrd-knc-mark:table.zsrdKncMarkDetail"
+		displayProperty="fdParentId"
+		serviceBean="zsrdKncMarkDetailService"
+		table="zsrd_knc_mark_detail"
+		url="/zsrd/knc/mark/zsrd_knc_mark_detail/zsrdKncMarkDetail.do?method=view&amp;fdId=${fdId}">
+
+		<idProperty>
+			<generator
+				type="assigned" />
+		</idProperty>
+
+		<simpleProperty
+			name="fdScore"
+			messageKey="zsrd-knc-mark:zsrdKncMarkDetail.fdScore"
+			type="Integer"
+			column="fd_score"
+			notNull="false"
+			length="4"
+			validate="false" />
+
+		<simpleProperty
+			name="fdMarkerId"
+			messageKey="zsrd-knc-mark:zsrdKncMarkDetail.fdMarkerId"
+			type="String"
+			column="fd_marker_id"
+			notNull="false"
+			length="36"
+			validate="false" />
+
+		<simpleProperty
+			name="fdMarker"
+			messageKey="zsrd-knc-mark:zsrdKncMarkDetail.fdMarker"
+			type="String"
+			column="fd_marker"
+			notNull="false"
+			length="36"
+			validate="false" />
+
+		<simpleProperty
+			name="fdSuggest"
+			messageKey="zsrd-knc-mark:zsrdKncMarkDetail.fdSuggest"
+			type="String"
+			column="fd_suggest"
+			notNull="false"
+			length="1000"
+			validate="false" />
+
+		<modelProperty
+			name="fdParent"
+			messageKey="zsrd-knc-mark:zsrdKncMarkDetail.fdParent"
+			type="com.landray.kmss.zsrd.knc.mark.model.ZsrdKncMarkMain"
+			column="fd_parent_id"
+			notNull="false"
+			validate="false" />
+
+ 
+
+ 
+	</model>
+</models>

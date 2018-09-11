@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<models
+	xmlns="http://www.example.org/design-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/design-config ../../../data-dict.xsd ">
+	<model
+		modelName="com.landray.kmss.zsrd.apply.seal.model.ZsrdApplySeal"
+		messageKey="zsrd-apply-seal:table.zsrdApplySeal"
+		displayProperty="fdDepart"
+		serviceBean="zsrdApplySealService"
+		table="zsrd_apply_seal"
+		url="/zsrd/apply/seal/zsrd_apply_seal/zsrdApplySeal.do?method=view&amp;fdId=${fdId}">
+
+		<idProperty>
+			<generator
+				type="assigned" />
+		</idProperty>
+
+		<simpleProperty
+			name="docStatus"
+			messageKey="zsrd-apply-seal:zsrdApplySeal.docStatus"
+			type="String"
+			column="doc_status"
+			notNull="false"
+			length="2"
+			validate="false" />
+
+		<simpleProperty
+			name="docCreateTime"
+			messageKey="zsrd-apply-seal:zsrdApplySeal.docCreateTime"
+			type="DateTime"
+			column="doc_create_time"
+			notNull="false"
+			validate="false" />
+
+		<simpleProperty
+			name="fdToCompany"
+			messageKey="zsrd-apply-seal:zsrdApplySeal.fdToCompany"
+			type="String"
+			column="fd_to_company"
+			notNull="false"
+			length="200"
+			validate="false" />
+
+		<simpleProperty
+			name="fdSealNum"
+			messageKey="zsrd-apply-seal:zsrdApplySeal.fdSealNum"
+			type="String"
+			column="fd_seal_num"
+			notNull="false"
+			length="36"
+			validate="false" />
+
+		<simpleProperty
+			name="fdRemark"
+			messageKey="zsrd-apply-seal:zsrdApplySeal.fdRemark"
+			type="String"
+			column="fd_remark"
+			notNull="false"
+			length="500"
+			validate="false" />
+			
+		<simpleProperty
+			name="fdSort"
+			messageKey="zsrd-apply-seal:zsrdApplySeal.fdSort"
+			type="String"
+			column="fd_sort"
+			notNull="false"
+			length="36"
+			validate="false" />
+
+		<modelProperty
+			name="fdServiceDepart"
+			messageKey="zsrd-apply-seal:zsrdApplySeal.fdServiceDepart"
+			type="com.landray.kmss.common.model.SysOrgElement"
+			column="fd_service_depart"
+			notNull="false"
+			validate="false" />
+
+		<modelProperty
+			name="fdDepart"
+			messageKey="zsrd-apply-seal:zsrdApplySeal.fdDepart"
+			type="com.landray.kmss.common.model.SysOrgElement"
+			column="fd_depart"
+			notNull="false"
+			validate="false" />
+
+		<modelProperty
+			name="docCreator"
+			messageKey="zsrd-apply-seal:zsrdApplySeal.docCreator"
+			type="com.landray.kmss.sys.organization.model.SysOrgElement"
+			column="doc_creator_id"
+			notNull="false"
+			validate="false" />
+		
+		<bag name="authReaders" table="zsrd_apply_seal_readers">
+			<key column="fd_doc_id" />
+			<many-to-many class="com.landray.kmss.sys.organization.model.SysOrgElement"
+				column="fd_org_id" />
+		</bag>
+		<bag name="authEditors" table="zsrd_apply_seal_editors">
+			<key column="fd_doc_id" />
+			<many-to-many class="com.landray.kmss.sys.organization.model.SysOrgElement"
+				column="fd_org_id" />
+		</bag>
+		<bag name="authOtherReaders" table="zsrd_apply_seal_oreader"
+			lazy="true">
+			<key column="fd_doc_id" />
+			<many-to-many class="com.landray.kmss.sys.organization.model.SysOrgElement"
+				column="auth_other_reader_id" />
+		</bag>
+		<bag name="authOtherEditors" table="zsrd_apply_seal_oeditor"
+			lazy="true">
+			<key column="fd_doc_id" />
+			<many-to-many class="com.landray.kmss.sys.organization.model.SysOrgElement"
+				column="auth_other_editor_id" />
+		</bag>
+		<bag name="authAllReaders" table="zsrd_apply_seal_areader"
+			lazy="true">
+			<key column="fd_doc_id" />
+			<many-to-many class="com.landray.kmss.sys.organization.model.SysOrgElement"
+				column="auth_other_reader_id" />
+		</bag>
+		<bag name="authAllEditors" table="zsrd_apply_seal_aeditor"
+			lazy="true">
+			<key column="fd_doc_id" />
+			<many-to-many class="com.landray.kmss.sys.organization.model.SysOrgElement"
+				column="auth_other_editor_id" />
+		</bag>
+		<bag name="authAttDownloads" table="zsrd_apply_seal_attdl"
+			lazy="true">
+			<key column="fd_doc_id" />
+			<many-to-many class="com.landray.kmss.sys.organization.model.SysOrgElement"
+				column="auth_att_download_id" />
+		</bag>
+		<bag name="authAttCopys" table="zsrd_apply_seal_attcopy"
+			lazy="true">
+			<key column="fd_doc_id" />
+			<many-to-many class="com.landray.kmss.sys.organization.model.SysOrgElement"
+				column="auth_att_copy_id" />
+		</bag>
+		<bag name="authAttPrints" table="zsrd_apply_seal_attprint"
+			lazy="true">
+			<key column="fd_doc_id" />
+			<many-to-many class="com.landray.kmss.sys.organization.model.SysOrgElement"
+				column="auth_att_print_id" />
+		</bag>
+ 
+
+ 
+	</model>
+</models>
